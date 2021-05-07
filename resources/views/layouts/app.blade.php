@@ -18,9 +18,17 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <nav class="
+                navbar navbar-expand-lg navbar-dark navbar-custom
+                {{Route::current()->getName() == 'home' ? 'absolute' : ''}}
+            ">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Insight</a>
+                    <a
+                        class="navbar-brand"
+                        href="{{route('home')}}"
+                    >
+                        Insight
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -42,7 +50,7 @@
                             <a class="nav-link" href="/#shedule">График выхода журнала</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Архив номеров</a>
+                            <a class="nav-link" href="{{route('archive')}}">Архив номеров</a>
                         </li>
                     </ul>
                     </div>
@@ -55,8 +63,8 @@
         </main>
 
         <footer class="footer">
-            <p>Контакты: <a class="base-link" href="mailto:insight-rsvpu@mail.ru">insight-rsvpu@mail.ru</a></p>
-          </footer>
+            <p class="footer__text">Контакты: <a class="base-link" href="mailto:insight-rsvpu@mail.ru">insight-rsvpu@mail.ru</a></p>
+        </footer>
 
 
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

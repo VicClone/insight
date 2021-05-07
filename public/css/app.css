@@ -29,8 +29,11 @@ h6 {
 }
 
 .navbar-custom {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #020024;
+}
+.navbar-custom.absolute {
   background-color: transparent;
   position: absolute;
   top: 0;
@@ -509,5 +512,8 @@ p {
   background-color: #f9f9f9;
   border-top: 0.05rem solid #e5e5e5;
   margin-top: 40px;
+}
+.footer__text {
+  text-align: center;
 }
 
