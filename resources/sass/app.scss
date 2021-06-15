@@ -10,6 +10,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 p {
@@ -86,6 +93,7 @@ p {
 
         &-text {
             padding-left: 20px;
+            text-align: center;
         }
     }
 }
@@ -407,6 +415,10 @@ p {
     &__list {
         font-size: 14px;
     }
+}
+
+.page {
+    margin-top: 20px;
 }
 
 .footer {

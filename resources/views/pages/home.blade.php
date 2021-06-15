@@ -46,8 +46,8 @@
                                         <p class="home-carousel__content-text">
                                         Приглашаем принять участие в публикациях следующего номера журнала "ИНСАЙТ". Прием материалов: до 15 сентября 2020 года
                                         </p>
-                                        <a class="home-carousel__content-btn btn btn-secondary rounded-pill mt-3" href="">
-                                            Содержание
+                                        <a class="home-carousel__content-btn btn btn-secondary rounded-pill mt-3" href="#recommendation">
+                                            Подробнее
                                         </a>
                                     </div>
                                 </div>
@@ -94,13 +94,6 @@
                         <div class="home-magazines__item">
                             <img
                                 class="home-magazines__item-img"
-                                src="{{asset('img/magazine2.jpg')}}"
-                                alt="Журнал 2"
-                            >
-                        </div>
-                        <div class="home-magazines__item">
-                            <img
-                                class="home-magazines__item-img"
                                 src="{{asset('img/magazine3.jpg')}}"
                                 alt="Журнал 3"
                             >
@@ -110,6 +103,13 @@
                                 class="home-magazines__item-img"
                                 src="{{asset('img/magazine4.jpg')}}"
                                 alt="Журнал 4"
+                            >
+                        </div>
+                        <div class="home-magazines__item">
+                            <img
+                                class="home-magazines__item-img"
+                                src="{{asset('img/magazine2.jpg')}}"
+                                alt="Журнал 2"
                             >
                         </div>
                     </div>
