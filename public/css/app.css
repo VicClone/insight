@@ -159,6 +159,114 @@ header.masthead .bg-circle-4 {
   right: auto;
 }
 
+.archive__section {
+  margin-bottom: 30px;
+}
+.archive__year {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.archive__magazines {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.archive__magazines-card {
+  flex-basis: 30%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.magazine {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.magazine__cover {
+  max-height: 400px;
+  max-width: 30%;
+}
+.magazine__cover-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.magazine__info {
+  max-width: 50%;
+}
+.magazine__info-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.magazine__info-name {
+  font-size: 16px;
+}
+.magazine__info-text {
+  font-size: 14px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.articles__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.articles__list {
+  margin: 0 auto;
+}
+.articles__list-title {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.articles__list-text {
+  font-size: 14px;
+}
+.articles__list-links {
+  display: flex;
+  justify-content: center;
+}
+.articles__list-link {
+  margin: 0 10px;
+}
+
+.article {
+  margin: 40px 0;
+}
+.article__title {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+.article__authors {
+  font-size: 16px;
+  text-align: center;
+}
+.article__links {
+  text-align: center;
+}
+.article__download {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.annotation {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.annotation__title {
+  font-size: 22px;
+  text-align: center;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
