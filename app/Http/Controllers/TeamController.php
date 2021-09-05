@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TeamRequest;
+use App\Http\Requests\TeamEditRequest;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Image;
@@ -39,16 +40,18 @@ class TeamController extends Controller
         return view('admin.team-edit', ['team' => $team->find($id)]);
     }
 
-    public function teamEditSubmit($teamId, TeamRequest $req) {
+    public function teamEditSubmit($teamId, TeamEditRequest $req) {
         $team = Team::find($teamId);
-        $avatarId = $team->avatar_id;
-        $oldAvatar = Image::find($avatarId);
         $file = $req->file('avatar');
-        $newAvatar = Storage::putFileAs('images', $file, $oldAvatar->name);
+        if ($file) {
+            $avatarId = $team->avatar_id;
+            $oldAvatar = Image::find($avatarId);
+            $newAvatar = Storage::putFileAs('images', $file, $oldAvatar->name);
+        }
 
-        $team = Team::find($id);
         $team->name = $req->input('name');
         $team->position = $req->input('position');
+        $team->save();
     }
 
     public function teamDelete($teamId) {

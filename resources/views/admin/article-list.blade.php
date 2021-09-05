@@ -12,31 +12,30 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Название</th>
-                        <th scope="col">Номер</th>
-                        <th scope="col">Год</th>
-                        <th scope="col">Статьи</th>
+                        <th scope="col">Авторы</th>
+                        <th scope="col">Ссылка на DOI</th>
+                        <th scope="col">Популярное</th>
                         <th scope="col">Изменить</th>
                         <th scope="col">Удалить</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($magazines as $item)
+                    @foreach ($articles as $item)
                         <tr>
                             <th scope="row">{{ $item->id }}</th>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->number }}</td>
-                            <td>{{ $item->year }}</td>
+                            <td>{{ $item->authors }}</td>
+                            <td>{{ $item->link_doi }}</td>
+                            <td>{{ $item->is_popular ? 'Да' : 'Нет' }}</td>
                             <td>
                                 <a
-                                    href="{{ route('magazine-edit', $item->id) }}"
-                                    class="btn btn-success"
-                                >
-                                    Открыть статьи
-                                </a>
-                            </td>
-                            <td>
-                                <a
-                                    href="{{ route('magazine-edit', $item->id) }}"
+                                    href="{{
+                                        route('article-edit',
+                                        [
+                                            'magazineId' => $item->magazine_id,
+                                            'articleId' => $item->id
+                                        ])
+                                    }}"
                                     class="btn btn-warning"
                                 >
                                     Изменить
@@ -44,7 +43,7 @@
                             </td>
                             <td>
                                 <a
-                                    href="{{ route('magazine-delete', $item->id) }}"
+                                    href="{{ route('article-delete', $item->id) }}"
                                     class="btn btn-danger"
                                 >
                                     Удалить
