@@ -8,7 +8,7 @@
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($promo as $key => $promoItem)
-                                <div class="carousel-item py-5 px-2 {{$key ? 'active' : ''}}">
+                                <div class="carousel-item py-5 px-2 {{$key == 0 ? 'active' : ''}}">
                                     <div class="home-carousel">
                                         <div class="home-carousel__preview">
                                             <img
