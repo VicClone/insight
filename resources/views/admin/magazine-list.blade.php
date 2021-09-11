@@ -7,6 +7,13 @@
             <h2>
                 Список журналов
             </h2>
+            <a
+                type="button"
+                class="btn btn-success my-2"
+                href="{{ route('magazine-add') }}"
+            >
+                Добавить
+            </a>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -28,7 +35,7 @@
                             <td>{{ $item->year }}</td>
                             <td>
                                 <a
-                                    href="{{ route('magazine-edit', $item->id) }}"
+                                    href="{{ route('article-list', $item->id) }}"
                                     class="btn btn-success"
                                 >
                                     Открыть статьи

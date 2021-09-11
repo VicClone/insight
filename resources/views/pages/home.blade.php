@@ -7,51 +7,33 @@
                 <div class="home-banner__magazines">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item py-5 px-2 active">
-                                <div class="home-carousel">
-                                    <div class="home-carousel__preview">
-                                        <img
-                                            src="http://insight-rsvpu.usite.pro/oblozhka.jpg"
-                                            class="home-carousel__preview-img"
-                                            alt="Свежий номер"
-                                        >
-                                    </div>
-                                    <div class="home-carousel__content">
-                                        <h5 class="home-carousel__content-title">
-                                            Свежий номер
-                                        </h5>
-                                        <p class="home-carousel__content-text">
-                                            Первый номер журнала «Инновационная научная современная академическая исследовательская траектория (ИНСАЙТ)»
-                                            посвящен 100-летию системы профессионально-педагогического образования России
-                                        </p>
-                                        <a class="home-carousel__content-btn btn btn-secondary rounded-pill mt-3" href="">
-                                            Содержание
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item py-5 px-2">
-                                <div class="home-carousel">
-                                    <div class="home-carousel__preview">
-                                        <img
-                                            src="http://insight-rsvpu.usite.pro/oblozhka_2.jpg"
-                                            class="home-carousel__preview-img"
-                                            alt="Следующий номер"
-                                        >
-                                    </div>
-                                    <div class="home-carousel__content">
-                                        <h5 class="home-carousel__content-title">
-                                        Следующий номер
-                                        </h5>
-                                        <p class="home-carousel__content-text">
-                                        Приглашаем принять участие в публикациях следующего номера журнала "ИНСАЙТ". Прием материалов: до 15 сентября 2020 года
-                                        </p>
-                                        <a class="home-carousel__content-btn btn btn-secondary rounded-pill mt-3" href="#recommendation">
-                                            Подробнее
-                                        </a>
+                            @foreach ($promo as $key => $promoItem)
+                                <div class="carousel-item py-5 px-2 {{$key ? 'active' : ''}}">
+                                    <div class="home-carousel">
+                                        <div class="home-carousel__preview">
+                                            <img
+                                                src="/storage/images/{{$promoItem->img}}"
+                                                class="home-carousel__preview-img"
+                                                alt="{{$promoItem->name}}"
+                                            >
+                                        </div>
+                                        <div class="home-carousel__content">
+                                            <h5 class="home-carousel__content-title">
+                                                {{$promoItem->name}}
+                                            </h5>
+                                            <p class="home-carousel__content-text">
+                                                {{$promoItem->description}}
+                                            </p>
+                                            <a
+                                                class="home-carousel__content-btn btn btn-secondary rounded-pill mt-3"
+                                                href="{{$promoItem->link}}"
+                                            >
+                                                {{$promoItem->link_name}}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -183,26 +165,11 @@
                     <div class="popular-articles">
                         <h3 class="popular-articles__title">Популярные статьи</h3>
                         <ul class="popular-articles__list list-group">
-                            <li class="list-group-item">
-                                МЕТОДОЛОГИЧЕСКИЙ АППАРАТ НАУЧНОГО ИССЛЕДОВАНИЯ В АСПЕКТЕ КОНЦЕПТУАЛИЗАЦИИ ПЕДАГОГИЧЕСКОГО ЗНАНИЯ1<br>
-                                № 10 (2015)
-                            </li>
-                            <li class="list-group-item">
-                                О ПОНЯТИИ ПЕДАГОГИЧЕСКОЙ ПАРАДИГМЫ<br>
-                                № 9 (2012)
-                            </li>
-                            <li class="list-group-item">
-                                СОЦИАЛЬНО-ПСИХОЛОГИЧЕСКАЯ ХАРАКТЕРИСТИКА СОВРЕМЕННОГО СТУДЕНТА<br>
-                                № 8 (2013)
-                            </li>
-                            <li class="list-group-item">
-                                МЕНЕДЖМЕНТ В ОБРАЗОВАНИИ: СИСТЕМНЫЙ ПОДХОД<br>
-                                № 1 (2015)
-                            </li>
-                            <li class="list-group-item">
-                                ОБРАЗОВАТЕЛЬНЫЙ КОВОРКИНГ КАК НОВЫЙ ФОРМАТ ОРГАНИЗАЦИИ ОБРАЗОВАТЕЛЬНОГО ПРОСТРАНСТВА ДОПОЛНИТЕЛЬНОГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ<br>
-                                № 5 (2016)
-                            </li>
+                            @foreach ($articles as $article)
+                                <li class="list-group-item">
+                                    <span class="uppercase">{{$article->name}}</span><br>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -231,127 +198,19 @@
                 >
             </button>
             <div class="staff">
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/10-sharov.jpg"
-                            alt="Шаров Антон Александрович"
-                        >
+                @foreach ($team as $item)
+                    <div class="col-lg-2 staff__item">
+                        <div class="staff__avatar">
+                            <img
+                                class="staff__avatar-img"
+                                src="/storage/images/{{$item->img}}"
+                                alt="{{$item->name}}"
+                            >
+                        </div>
+                        <h2 class="staff__name">{{$item->name}}</h2>
+                        <p class="staff__desc">{{$item->position}}</p>
                     </div>
-                    <h2 class="staff__name">Шаров Антон Александрович</h2>
-                    <p class="staff__desc">Ответственный редактор, ст. преподаватель каф. психологии образования и профессионального развития РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/kislov-2.jpg"
-                            alt="avatar-1"
-                        >
-                    </div>
-                    <h2 class="staff__name">Кислов Александр Геннадьевич</h2>
-                    <p class="staff__desc">д-р филос. наук, профессор, зав. кафедрой философии, культурологии и искусствоведения РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/tretjakova_vs.jpg"
-                            alt="avatar-1"
-                        >
-                    </div>
-                    <h2 class="staff__name">Третьякова Вера Степановна</h2>
-                    <p class="staff__desc">д-р филол. наук, профессор кафедры психологии образования и профессионального развития РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/tretjakova_nv.jpg"
-                            alt="Третьякова Наталия Владимировна"
-                        >
-                    </div>
-                    <h2 class="staff__name">Третьякова Наталия Владимировна</h2>
-                    <p class="staff__desc">д-р пед. наук, доцент, директор Института гуманитарного и социально-экономического образования РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/vlasova_oi.jpg"
-                            alt="Власова Ольга Ивановна"
-                        >
-                    </div>
-                    <h2 class="staff__name">Власова Ольга Ивановна</h2>
-                    <p class="staff__desc">канд. социол. наук, доцент кафедры социологии и социальной работы РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/zavodchikov.jpg"
-                            alt="Заводчиков Дмитрий Павлович"
-                        >
-                    </div>
-                    <h2 class="staff__name">Заводчиков Дмитрий Павлович</h2>
-                    <p class="staff__desc">канд. пед. наук, доцент, и. о. заведующего кафедрой психологии образования и профессионального развития РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/2-konovalov-2.jpg"
-                            alt="Коновалов Антон Андреевич"
-                        >
-                    </div>
-                    <h2 class="staff__name">Коновалов Антон Андреевич</h2>
-                    <p class="staff__desc">канд. пед. наук, старший преподаватель кафедры музыкально-компьютерных технологий, кино и телевидения РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/1-lyzhin.jpg"
-                            alt="Лыжин Антон Игоревич"
-                        >
-                    </div>
-                    <h2 class="staff__name">Лыжин Антон Игоревич</h2>
-                    <p class="staff__desc">канд. пед. наук, проректор по научной, инновационной политике и внешним связям РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/osipova.jpg"
-                            alt="Осипова Ирина Васильевна"
-                        >
-                    </div>
-                    <h2 class="staff__name">Осипова Ирина Васильевна</h2>
-                    <p class="staff__desc">канд. пед. наук, профессор кафедры правового и документационного обеспечения управления РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/tarasjuk.jpg"
-                            alt="Тарасюк Ольга Вениаминовна"
-                        >
-                    </div>
-                    <h2 class="staff__name">Тарасюк Ольга Вениаминовна</h2>
-                    <p class="staff__desc">канд. пед. наук, профессор кафедры стиля и имиджа РГППУ</p>
-                </div>
-                <div class="col-lg-2 staff__item">
-                    <div class="staff__avatar">
-                        <img
-                            class="staff__avatar-img"
-                            src="https://insight-rsvpu.usite.pro/shhipanova.jpg"
-                            alt="Щипанова Дина Евгеньевна"
-                        >
-                    </div>
-                    <h2 class="staff__name">Щипанова Дина Евгеньевна</h2>
-                    <p class="staff__desc">кандидат псих. наук, доцент кафедры психологии образования и профессионального развития РГППУ</p>
-                </div>
+                @endforeach
             </div>
         </div>
 

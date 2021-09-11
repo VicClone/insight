@@ -15,21 +15,28 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('pages.home');
+// })->name('home');
 
-Route::get('/archive', function () {
-    return view('pages.archive');
-})->name('archive');
+Route::get(
+    '/',
+    [App\Http\Controllers\Controller::class, 'home']
+)->name('home');
 
-Route::get('/magazine/{id}', function () {
-    return view('pages.magazine');
-})->name('magazine');
+Route::get(
+    '/archive',
+    [App\Http\Controllers\Controller::class, 'archive']
+)->name('archive');
 
-Route::get('/article/{id}', function () {
-    return view('pages.article');
-})->name('article');
+Route::get(
+    '/magazine/{id}',
+    [App\Http\Controllers\Controller::class, 'magazine']
+)->name('magazine');
+
+Route::get('/article/{id}',
+    [App\Http\Controllers\Controller::class, 'article']
+)->name('article');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
@@ -95,7 +102,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get(
         '/admin/magazine/{magazineId}/article/add',
         [App\Http\Controllers\ArticleController::class, 'articleAdd']
-    )->name('articleAdd');
+    )->name('article-add');
 
     Route::post(
         '/admin/magazine/{magazineId}/article/add',

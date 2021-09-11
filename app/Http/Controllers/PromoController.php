@@ -13,9 +13,11 @@ use App\Models\Promo;
 class PromoController extends Controller
 {
     public function promoList() {
+        $promos = Promo::all();
+
         return view(
             'admin.promo-list',
-            ['promo' => Promo::all()]
+            ['promo' => $promos]
         );
     }
 
@@ -27,7 +29,7 @@ class PromoController extends Controller
 
     public function promoAddSubmit(PromoRequest $req) {
         $image = $req->file('image');
-        $storedFile = Storage::putFile('images', $image);
+        $storedFile = Storage::disk('public')->putFile('images', $image);
         $cover = new Image;
         $cover->name = pathinfo($storedFile)['basename'];
         $cover->save();
@@ -59,7 +61,7 @@ class PromoController extends Controller
         if ($image) {
             $imageId = $promo->image_id;
             $oldImage = Image::find($imageId);
-            $newImage = Storage::putFileAs('images', $image, $oldImage->name);
+            $newImage = Storage::disk('public')->putFileAs('images', $image, $oldImage->name);
         }
 
         $promo->name = $req->input('name');

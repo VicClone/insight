@@ -22,7 +22,7 @@ class ArticleController extends Controller
 
     public function articleAddSubmit(ArticleRequest $req) {
         $file = $req->file('file');
-        $storedFile = Storage::putFile('files', $file);
+        $storedFile = Storage::disk('public')->putFile('files', $file);
 
         $articleFile = new File;
         $articleFile->name = pathinfo($storedFile)['basename'];
@@ -38,6 +38,18 @@ class ArticleController extends Controller
         $article->sort = 1;
         $article->file_id = $articleFile->id;
         $article->save();
+
+
+        $magazineId = $req->input('magazine-id');
+        $articles = Article::where('magazine_id', $magazineId)->get();
+
+        return view(
+            'admin.article-list',
+            [
+                'articles' => $articles,
+                'magazineId' => $magazineId
+            ]
+        );
     }
 
     public function articleList($magazineId) {
@@ -45,7 +57,10 @@ class ArticleController extends Controller
 
         return view(
             'admin.article-list',
-            ['articles' => $articles]
+            [
+                'articles' => $articles,
+                'magazineId' => $magazineId
+            ]
         );
     }
 
@@ -71,7 +86,7 @@ class ArticleController extends Controller
         if ($file) {
             $fileId = $article->file_id;
             $oldFile = File::find($fileId);
-            $newFile = Storage::putFileAs('file', $file, $oldFile->name);
+            $newFile = Storage::disk('public')->putFileAs('file', $file, $oldFile->name);
         }
 
         $article->name = $req->input('name');

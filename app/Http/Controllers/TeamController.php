@@ -14,7 +14,7 @@ class TeamController extends Controller
 {
     public function teamAdd(TeamRequest $req) {
         $file = $req->file('avatar');
-        $storedFile = Storage::putFile('images', $file);
+        $storedFile = Storage::disk('public')->put('images', $file);
         $avatar = new Image;
         $avatar->name = pathinfo($storedFile)['basename'];
         $avatar->save();
@@ -25,6 +25,11 @@ class TeamController extends Controller
         $team->avatar_id = $avatar->id;
         $team->sort = 1;
         $team->save();
+
+        return view(
+            'admin.team-list',
+            ['team' => Team::all()]
+        );
     }
 
     public function teamList() {
@@ -46,7 +51,7 @@ class TeamController extends Controller
         if ($file) {
             $avatarId = $team->avatar_id;
             $oldAvatar = Image::find($avatarId);
-            $newAvatar = Storage::putFileAs('images', $file, $oldAvatar->name);
+            $newAvatar = Storage::disk('public')->putFileAs('images', $file, $oldAvatar->name);
         }
 
         $team->name = $req->input('name');

@@ -16,8 +16,8 @@ class MagazineController extends Controller
     public function magazineAdd(MagazineRequest $req) {
         $cover = $req->file('cover');
         $file = $req->file('file');
-        $storedCover = Storage::putFile('images', $cover);
-        $storedFile = Storage::putFile('files', $file);
+        $storedCover = Storage::disk('public')->putFile('images', $cover);
+        $storedFile = Storage::disk('public')->putFile('files', $file);
 
         $cover = new Image;
         $cover->name = pathinfo($storedCover)['basename'];
@@ -34,6 +34,11 @@ class MagazineController extends Controller
         $magazine->cover_id = $cover->id;
         $magazine->file_id = $magazineFile->id;
         $magazine->save();
+
+        return view(
+            'admin.magazine-list',
+            ['magazines' => Magazine::all()]
+        );
     }
 
     public function magazineList() {
@@ -58,19 +63,24 @@ class MagazineController extends Controller
         if ($cover) {
             $coverId = $magazine->cover_id;
             $oldCover = Image::find($coverId);
-            $newCover = Storage::putFileAs('images', $cover, $oldCover->name);
+            $newCover = Storage::disk('public')->putFileAs('images', $cover, $oldCover->name);
         }
 
         if ($file) {
             $fileId = $magazine->file_id;
             $oldFile = File::find($fileId);
-            $newFile = Storage::putFileAs('file', $file, $oldFile->name);
+            $newFile = Storage::disk('public')->putFileAs('files', $file, $oldFile->name);
         }
 
         $magazine->name = $req->input('name');
         $magazine->number = $req->input('number');
         $magazine->year = $req->input('year');
         $magazine->save();
+
+        return view(
+            'admin.magazine-list',
+            ['magazines' => Magazine::all()]
+        );
     }
 
     public function magazineDelete($magazineId) {
@@ -88,5 +98,10 @@ class MagazineController extends Controller
         $cover->delete();
         $file->delete();
         $magazine->delete();
+
+        return view(
+            'admin.magazine-list',
+            ['magazines' => Magazine::all()]
+        );
     }
 }

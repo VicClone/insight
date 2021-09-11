@@ -7,6 +7,13 @@
             <h2>
                 Список сотрудников
             </h2>
+            <a
+                type="button"
+                class="btn btn-success my-2"
+                href="{{ route('team-add') }}"
+            >
+                Добавить
+            </a>
             <table class="table table-bordered">
                 <thead>
                     <tr>

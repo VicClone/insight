@@ -7,6 +7,13 @@
             <h2>
                 Список журналов
             </h2>
+            <a
+                type="button"
+                class="btn btn-success my-2"
+                href="{{ route('article-add', $magazineId) }}"
+            >
+                Добавить
+            </a>
             <table class="table table-bordered">
                 <thead>
                     <tr>
