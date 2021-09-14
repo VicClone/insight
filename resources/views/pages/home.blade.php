@@ -186,14 +186,14 @@
             <button type="button" class="staff__btn staff__btn-prev">
                 <img
                     class="staff__btn-icon"
-                    src="{{asset('icons/arrow_back.svg')}}"
+                    src="{{asset('img/icons/arrow_back.svg')}}"
                     alt="next"
                 >
             </button>
             <button type="button" class="staff__btn staff__btn-next">
                 <img
                     class="staff__btn-icon"
-                    src="{{asset('icons/arrow_forward.svg')}}"
+                    src="{{asset('img/icons/arrow_forward.svg')}}"
                     alt="next"
                 >
             </button>
