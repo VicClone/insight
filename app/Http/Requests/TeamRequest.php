@@ -27,6 +27,7 @@ class TeamRequest extends FormRequest
             'name'      => 'required|max:250',
             'position'  => 'required|max:250',
             'avatar'    => 'required',
+            'sort'      => ''
         ];
     }
 

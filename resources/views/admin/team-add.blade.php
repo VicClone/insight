@@ -38,6 +38,15 @@
                     >
                 </div>
 
+                <div class="form-group mb-3">
+                    <label for="sort">Введите позицию</label>
+                    <input
+                        name="sort"
+                        type="text"
+                        class="form-control"
+                    >
+                </div>
+
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="avatar">Загрузить аватар</label>
                     <input type="file" class="form-control" id="avatar" name="avatar">

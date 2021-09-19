@@ -44,7 +44,7 @@ class Controller extends BaseController
             [
                 'promo' => $promos,
                 'articles' => $popularArticles,
-                'team' => $team
+                'team' => $team->sortBy('sort')
             ]
         );
     }

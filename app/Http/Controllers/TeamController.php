@@ -12,6 +12,13 @@ use App\Models\Team;
 
 class TeamController extends Controller
 {
+    public function teamList() {
+        return view(
+            'admin.team-list',
+            ['team' => Team::all()]
+        );
+    }
+
     public function teamAdd(TeamRequest $req) {
         $file = $req->file('avatar');
         $storedFile = Storage::disk('public')->put('images', $file);
@@ -21,22 +28,12 @@ class TeamController extends Controller
 
         $team = new Team;
         $team->name = $req->input('name');
-        $team->position = $req->input('position')   ;
+        $team->position = $req->input('position');
         $team->avatar_id = $avatar->id;
-        $team->sort = 1;
+        $team->sort = $req->input('sort');
         $team->save();
 
-        return view(
-            'admin.team-list',
-            ['team' => Team::all()]
-        );
-    }
-
-    public function teamList() {
-        return view(
-            'admin.team-list',
-            ['team' => Team::all()]
-        );
+        return $this->teamList();
     }
 
     public function teamEdit($id) {
@@ -56,7 +53,10 @@ class TeamController extends Controller
 
         $team->name = $req->input('name');
         $team->position = $req->input('position');
+        $team->sort = $req->input('sort');
         $team->save();
+
+        return $this->teamList();
     }
 
     public function teamDelete($teamId) {

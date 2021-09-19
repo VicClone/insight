@@ -27,6 +27,7 @@ class MagazineEditRequest extends FormRequest
             'name'      => 'required|max:250',
             'number'    => 'required|max:250',
             'year'      => 'required|max:4',
+            'sort'      => ''
         ];
     }
 
