@@ -5,6 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-4">
+                <a
+                    type="button"
+                    class="btn btn-primary my-2 me-auto"
+                    href="{{ route('team-list') }}"
+                >
+                    К списку сотрудников
+                </a>
               <h2>Изменить сотрудника</h2>
               <form
                 action="{{ route('team-edit-submit', $team->id) }}"

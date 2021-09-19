@@ -5,6 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-4">
+                <a
+                    type="button"
+                    class="btn btn-primary my-2 me-auto"
+                    href="{{ route('magazine-list') }}"
+                >
+                    К списку журналов
+                </a>
               <h2>Добавить журнал</h2>
               <form
                 action="{{ route('magazine-add-submit') }}"

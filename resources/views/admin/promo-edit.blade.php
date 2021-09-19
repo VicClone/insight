@@ -5,6 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-4">
+                <a
+                    type="button"
+                    class="btn btn-primary my-2 me-auto"
+                    href="{{ route('promo-list') }}"
+                >
+                    К списку слайдов
+                </a>
               <h2>Редактировать слайд</h2>
               <form
                 action="{{ route('promo-edit-submit', $promo->id) }}"

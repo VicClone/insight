@@ -4,6 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <a
+                type="button"
+                class="btn btn-primary my-2 me-auto"
+                href="{{ route('article-list', $magazine->id) }}"
+            >
+                К списку статей
+            </a>
             <div class="card p-4">
               <h2>Изменить статью</h2>
               <h3>Журнал: {{$magazine->name}}</h3>

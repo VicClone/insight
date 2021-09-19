@@ -5,6 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-4">
+                <a
+                    type="button"
+                    class="btn btn-primary my-2 me-auto"
+                    href="{{ route('promo-list') }}"
+                >
+                    К списку слайдов
+                </a>
               <h2>Добавить слайд</h2>
               <form
                 action="{{ route('promo-add-submit') }}"
@@ -12,7 +19,6 @@
                 enctype="multipart/form-data"
               >
                 @csrf
-
                 <div class="form-group mb-3">
                     <label for="name">Введите название</label>
                     <input
