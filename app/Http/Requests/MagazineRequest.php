@@ -24,11 +24,12 @@ class MagazineRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|max:250',
+            'name'      => 'max:250',
             'number'    => 'required|max:250',
             'year'      => 'required|max:4',
             'cover'     => 'required',
             'file'      => 'required',
+            'sort'      => ''
         ];
     }
 

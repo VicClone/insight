@@ -50,6 +50,16 @@
                     >
                 </div>
 
+                <div class="form-group mb-3">
+                    <label for="sort">Позиция</label>
+                    <input
+                        name="sort"
+                        type="number"
+                        class="form-control"
+                        value="{{$magazine->sort}}"
+                    >
+                </div>
+
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="cover">Загрузить обложку</label>
                     <input type="file" class="form-control" id="cover" name="cover">

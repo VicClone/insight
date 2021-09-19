@@ -71,7 +71,7 @@ class Controller extends BaseController
                 $magazine['img'] = $filename;
             }
 
-            $result[$year] = $magazines;
+            $result[$year] = $magazines->sortBy('sort');
         }
 
         return view(

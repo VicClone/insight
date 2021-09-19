@@ -31,6 +31,7 @@ class MagazineController extends Controller
         $magazine->name = $req->input('name');
         $magazine->number = $req->input('number');
         $magazine->year = $req->input('year');
+        $magazine->sort = $req->input('sort');
         $magazine->cover_id = $cover->id;
         $magazine->file_id = $magazineFile->id;
         $magazine->save();
@@ -75,6 +76,7 @@ class MagazineController extends Controller
         $magazine->name = $req->input('name');
         $magazine->number = $req->input('number');
         $magazine->year = $req->input('year');
+        $magazine->sort = $req->input('sort');
         $magazine->save();
 
         return view(
