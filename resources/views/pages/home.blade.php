@@ -169,7 +169,7 @@
                         <ul class="popular-articles__list list-group">
                             @foreach ($articles as $article)
                                 <li class="list-group-item popular-articles__list-item">
-                                    <a class="popular-articles__link" href="/article/{{$article->id}}">
+                                    <a class="popular-articles__link" href="{{ route('article', $article->id) }}">
                                         <p class="popular-articles__name">{{$article->name}}</p>
                                         <p class="popular-articles__number">
                                             № {{$article->number}} {{$article->year}} год

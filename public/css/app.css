@@ -178,11 +178,34 @@ header.masthead .bg-circle-4 {
   flex-wrap: wrap;
 }
 .archive__magazines-card {
-  flex-basis: 30%;
+  flex-basis: 18%;
   max-width: 300px;
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .archive__year {
+    font-size: 20px;
+  }
+  .archive__magazines-card {
+    flex-basis: 30%;
+  }
+  .archive__magazines-link {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .archive__section {
+    margin-bottom: 20px;
+  }
+  .archive__year {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .archive__magazines-card {
+    flex-basis: 45%;
+  }
+}
 .magazine {
   display: flex;
   justify-content: center;
@@ -242,13 +265,41 @@ header.masthead .bg-circle-4 {
   margin: 0 10px;
 }
 
+@media screen and (max-width: 1200px) {
+  .magazine {
+    margin-bottom: 20px;
+  }
+  .magazine__info-title {
+    font-size: 16px;
+  }
+  .magazine__info-name {
+    font-size: 14px;
+  }
+  .magazine__info-btn {
+    font-size: 12px;
+  }
+
+  .articles__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .articles__list-title {
+    font-size: 14px;
+  }
+  .articles__list-text {
+    font-size: 12px;
+  }
+  .articles__list-link {
+    font-size: 12px;
+  }
+}
 .article {
   margin: 40px 0;
 }
 .article__title {
   font-size: 24px;
   text-align: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 .article__authors {
   font-size: 16px;
@@ -272,6 +323,28 @@ header.masthead .bg-circle-4 {
   text-align: center;
 }
 
+@media screen and (max-width: 1200px) {
+  .article {
+    margin: 20px 0;
+  }
+  .article__title {
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+  .article__authors {
+    font-size: 14px;
+  }
+  .article__links {
+    font-size: 14px;
+  }
+  .article__download {
+    margin-bottom: 25px;
+  }
+
+  .annotation__title {
+    font-size: 20px;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
@@ -689,6 +762,13 @@ main {
   margin-top: 20px;
 }
 
+.nav-history {
+  margin-bottom: 20px;
+}
+.nav-history__btn {
+  font-size: 16px;
+}
+
 .footer {
   padding: 2.5rem 0;
   color: #727272;
@@ -794,6 +874,11 @@ main {
   .home__btn-top {
     bottom: 50px;
     left: 50px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .nav-history__btn {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 990px) {

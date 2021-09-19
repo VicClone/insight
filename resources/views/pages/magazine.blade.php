@@ -2,6 +2,9 @@
 
 @section('content')
     <section class="container page">
+        <nav class="nav-history">
+            <a href="{{ route('archive') }}" class="btn btn-secondary nav-history__btn">В архив</a>
+        </nav>
         <section class="magazine">
             <div class="magazine__cover">
                 <img
@@ -17,7 +20,8 @@
                 <p class="magazine__info-name">
                     {{$magazine->name}}
                 </p>
-                <a href="#" class="btn btn-primary">Скачать</a>
+
+                <a href="/storage/files/{{$magazine->file}}" class="btn btn-primary magazine__info-btn">Скачать</a>
             </div>
         </section>
         <section class="articles">
@@ -43,7 +47,7 @@
                             </a>
                             <a
                                 class="articles__list-link btn btn-secondary"
-                                href="/article/{{$article->id}}"
+                                href="{{ route('article', $article->id) }}"
                             >
                                 Открыть
                             </a>

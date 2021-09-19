@@ -4,7 +4,7 @@
     &__title {
         font-size: 24px;
         text-align: center;
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
 
     &__authors {
@@ -30,5 +30,35 @@
     &__title {
         font-size: 22px;
         text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .article {
+        margin: 20px 0;
+
+        &__title {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        &__authors {
+            font-size: 14px;
+        }
+
+        &__links {
+            font-size: 14px;
+        }
+
+        &__download {
+            margin-bottom: 25px;
+        }
+    }
+
+    .annotation {
+        &__title {
+            font-size: 20px;
+        }
     }
 }

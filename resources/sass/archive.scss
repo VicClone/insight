@@ -15,9 +15,46 @@
         flex-wrap: wrap;
 
         &-card {
-            flex-basis: 30%;
+            flex-basis: 18%;
             max-width: 300px;
             margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .archive {
+        &__year {
+            font-size: 20px;
+        }
+
+        &__magazines {
+            &-card {
+                flex-basis: 30%;
+            }
+
+            &-link {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .archive {
+        &__section {
+            margin-bottom: 20px;
+        }
+
+        &__year {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        &__magazines {
+            &-card {
+                flex-basis: 45%;
+            }
         }
     }
 }

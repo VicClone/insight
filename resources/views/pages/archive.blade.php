@@ -15,7 +15,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$magazine->number}}</h5>
                                 <p class="card-text">{{$magazine->name}}</p>
-                                <a href="/magazine/{{$magazine->id}}" class="btn btn-primary">Открыть журнал</a>
+                                <a href="/magazine/{{$magazine->id}}" class="archive__magazines-link btn btn-primary">
+                                    Открыть журнал
+                                </a>
                             </div>
                         </div>
                     @endforeach

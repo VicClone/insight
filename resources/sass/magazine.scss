@@ -67,3 +67,44 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .magazine {
+        margin-bottom: 20px;
+
+        &__info {
+            &-title {
+                font-size: 16px;
+            }
+
+            &-name {
+                font-size: 14px;
+            }
+
+            &-btn {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .articles {
+        &__title {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        &__list {
+            &-title {
+                font-size: 14px;
+            }
+
+            &-text {
+                font-size: 12px;
+            }
+
+            &-link {
+                font-size: 12px;
+            }
+        }
+    }
+}
