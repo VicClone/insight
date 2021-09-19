@@ -24,6 +24,7 @@
             ">
                 <div class="container">
                     <a
+                        id="home"
                         class="navbar-brand"
                         href="{{route('home')}}"
                     >

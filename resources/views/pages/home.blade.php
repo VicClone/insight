@@ -492,7 +492,13 @@
         </div>
     </section>
 
-
+    <a href="#home" class="home__btn-top">
+        <img
+            class="home__btn-top-icon"
+            src="{{asset('img/icons/arrow_up.svg')}}"
+            alt="up"
+        >
+    </a>
 
     <script src="{{ asset('js/home.js') }}"></script>
 @endsection

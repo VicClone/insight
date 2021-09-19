@@ -320,6 +320,28 @@ p {
   font-weight: 500;
 }
 
+.home__btn-top {
+  width: 50px;
+  height: 50px;
+  background: #ec174f;
+  border-radius: 100px;
+  display: flex;
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
+  opacity: 0.5;
+  transition: 200ms;
+  cursor: pointer;
+}
+.home__btn-top:hover {
+  opacity: 1;
+}
+.home__btn-top-icon {
+  display: block;
+  width: 75%;
+  margin: auto;
+}
+
 .home-banner {
   display: flex;
   justify-content: space-between;
