@@ -454,6 +454,36 @@ p {
 
     &__list {
         font-size: 14px;
+
+        &-item {
+            transition: 200ms;
+
+            &:hover {
+                background: $gray-500-op20;
+            }
+        }
+    }
+
+    &__link {
+        color: $black;
+        text-decoration: none;
+        transition: 200ms;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+    }
+
+    &__name,
+    &__number,
+    &__authors {
+        margin: 0;
+        text-align: center;
+        text-indent: 0;
     }
 }
 

@@ -39,6 +39,12 @@ class Controller extends BaseController
             $item['img'] = $filename;
         }
 
+        foreach ($popularArticles as $article) {
+            $magazine = Magazine::find($article->magazine_id);
+            $article['number'] = $magazine->number;
+            $article['year'] = $magazine->year;
+        }
+
         return view(
             'pages.home',
             [

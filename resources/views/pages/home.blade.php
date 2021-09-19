@@ -166,8 +166,16 @@
                         <h3 class="popular-articles__title">Популярные статьи</h3>
                         <ul class="popular-articles__list list-group">
                             @foreach ($articles as $article)
-                                <li class="list-group-item">
-                                    <span class="uppercase">{{$article->name}}</span><br>
+                                <li class="list-group-item popular-articles__list-item">
+                                    <a class="popular-articles__link" href="/article/{{$article->id}}">
+                                        <p class="popular-articles__name">{{$article->name}}</p>
+                                        <p class="popular-articles__number">
+                                            № {{$article->number}} {{$article->year}} год
+                                        </p>
+                                        <p class="popular-articles__authors">
+                                            {{$article->authors}}
+                                        </p>
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>

@@ -653,6 +653,28 @@ p {
 .popular-articles__list {
   font-size: 14px;
 }
+.popular-articles__list-item {
+  transition: 200ms;
+}
+.popular-articles__list-item:hover {
+  background: rgba(173, 181, 189, 0.2);
+}
+.popular-articles__link {
+  color: #000;
+  text-decoration: none;
+  transition: 200ms;
+}
+.popular-articles__link:hover {
+  color: #ec174f;
+}
+.popular-articles__name {
+  text-transform: uppercase;
+}
+.popular-articles__name, .popular-articles__number, .popular-articles__authors {
+  margin: 0;
+  text-align: center;
+  text-indent: 0;
+}
 
 .page {
   margin-top: 20px;
