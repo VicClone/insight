@@ -32,3 +32,15 @@
     }
   }
 }
+
+@media screen and (max-width: 1400px) {
+    .navbar-custom {
+        .navbar-nav {
+            .nav-item {
+              .nav-link {
+                font-size: 10px;
+              }
+            }
+          }
+    }
+}

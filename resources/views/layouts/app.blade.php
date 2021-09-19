@@ -30,30 +30,30 @@
                     >
                         Insight
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#about">О журнале</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#staff">Редакционная коллегия</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#recommendation">Рекомендации для авторов</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#rules">Правила рецензирования</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#shedule">График выхода журнала</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('archive')}}">Архив номеров</a>
-                        </li>
-                    </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#about">О журнале</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#staff">Редакционная коллегия</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#recommendation">Рекомендации для авторов</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#rules">Правила рецензирования</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#shedule">График выхода журнала</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('archive')}}">Архив номеров</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
