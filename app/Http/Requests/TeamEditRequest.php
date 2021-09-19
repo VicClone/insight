@@ -24,7 +24,21 @@ class TeamEditRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'      => 'required|max:250',
+            'position'  => 'required|max:250',
+            'sort'      => '',
+            'link'      => 'required|max:250',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'name.required'         => 'Введите имя',
+            'name.max'              => 'Имя должно состоять максимум из 250 символов',
+            'position.required'     => 'Введите должность',
+            'position.max'          => 'Выберите компанию',
+            'link.required'         => 'Введите ссылку',
+            'link.max'              => 'Ссылка должно состоять максимум из 250 символов',
         ];
     }
 }

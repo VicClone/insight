@@ -39,6 +39,16 @@
                 </div>
 
                 <div class="form-group mb-3">
+                    <label for="link">Введите ссылку</label>
+                    <input
+                        id="link"
+                        name="link"
+                        type="text"
+                        class="form-control"
+                    >
+                </div>
+
+                <div class="form-group mb-3">
                     <label for="sort">Введите позицию</label>
                     <input
                         name="sort"

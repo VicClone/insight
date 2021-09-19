@@ -27,7 +27,8 @@ class TeamRequest extends FormRequest
             'name'      => 'required|max:250',
             'position'  => 'required|max:250',
             'avatar'    => 'required',
-            'sort'      => ''
+            'sort'      => '',
+            'link'      => 'required|max:250',
         ];
     }
 
@@ -38,6 +39,8 @@ class TeamRequest extends FormRequest
             'position.required'     => 'Введите должность',
             'position.max'          => 'Выберите компанию',
             'avatar.required'       => 'Выберите аватар',
+            'link.required'         => 'Введите ссылку',
+            'link.max'              => 'Ссылка должно состоять максимум из 250 символов',
         ];
     }
 }

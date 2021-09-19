@@ -469,6 +469,7 @@ p {
   height: 250px;
   overflow: hidden;
   border-radius: 5px;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 .staff__avatar-img {
@@ -483,10 +484,19 @@ p {
   font-size: 20px;
   text-align: center;
   font-weight: 400;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: 200ms;
+}
+.staff__name:hover {
+  color: #ec174f;
 }
 .staff__desc {
   font-size: 14px;
   text-align: center;
+  text-indent: 0;
+  margin-top: 5px;
 }
 
 .about {

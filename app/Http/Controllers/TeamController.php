@@ -31,6 +31,7 @@ class TeamController extends Controller
         $team->position = $req->input('position');
         $team->avatar_id = $avatar->id;
         $team->sort = $req->input('sort');
+        $team->link = $req->input('link');
         $team->save();
 
         return $this->teamList();
@@ -54,6 +55,7 @@ class TeamController extends Controller
         $team->name = $req->input('name');
         $team->position = $req->input('position');
         $team->sort = $req->input('sort');
+        $team->link = $req->input('link');
         $team->save();
 
         return $this->teamList();

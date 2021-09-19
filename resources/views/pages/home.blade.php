@@ -207,7 +207,15 @@
                                 alt="{{$item->name}}"
                             >
                         </div>
-                        <h2 class="staff__name">{{$item->name}}</h2>
+                        <div>
+                            <a
+                                href="{{$item->link}}"
+                                class="staff__name"
+                                target="_blank"
+                            >
+                                {{$item->name}}
+                            </a>
+                        </div>
                         <p class="staff__desc">{{$item->position}}</p>
                     </div>
                 @endforeach
