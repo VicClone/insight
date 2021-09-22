@@ -30,6 +30,11 @@
                                 Слайды на главной
                             </a>
                         </li>
+                        <li class="list-group-item">
+                            <a class="d-block" href="{{ route('author-list') }}">
+                                Авторы
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

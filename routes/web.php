@@ -158,4 +158,33 @@ Route::group(['middleware' => 'auth'], function() {
         '/admin/promo/{id}/delete',
         [App\Http\Controllers\PromoController::class, 'promoDelete']
     )->name('promo-delete');
+
+    Route::get('/admin/author/add',
+        [App\Http\Controllers\AuthorController::class, 'authorAdd']
+    )->name('author-add');
+
+    Route::post(
+        '/admin/author/add',
+        [App\Http\Controllers\AuthorController::class, 'authorAddSubmit']
+    )->name('author-add-submit');
+
+    Route::get(
+        '/admin/author',
+        [App\Http\Controllers\AuthorController::class, 'authorList']
+    )->name('author-list');
+
+    Route::get(
+        '/admin/author/{id}',
+        [App\Http\Controllers\AuthorController::class, 'authorEdit']
+    )->name('author-edit');
+
+    Route::post(
+        '/admin/author/{id}',
+        [App\Http\Controllers\AuthorController::class, 'authorEditSubmit']
+    )->name('author-edit-submit');
+
+    Route::get(
+        '/admin/author/{id}/delete',
+        [App\Http\Controllers\AuthorController::class, 'authorDelete']
+    )->name('author-delete');
 });
