@@ -12,7 +12,7 @@
                 К списку журналов
             </a>
             <h2>
-                Список журналов
+                Список статей журнала "{{$magazine->name}}"
             </h2>
             <a
                 type="button"
@@ -38,7 +38,11 @@
                         <tr>
                             <th scope="row">{{ $item->id }}</th>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->authors }}</td>
+                            <td>
+                                @foreach ($item->authors as $author)
+                                    {{$author->name}},
+                                @endforeach
+                            </td>
                             <td>{{ $item->link_doi }}</td>
                             <td>{{ $item->is_popular ? 'Да' : 'Нет' }}</td>
                             <td>

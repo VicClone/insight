@@ -35,7 +35,9 @@
                             {{$article->name}}
                         </p>
                         <p class="articles__list-text">
-                            {{$article->authors}}
+                            @foreach ($article->authors as $key=>$author)
+                                {{$author->name}}{{$key == count($article->authors) - 1 ? '' : ','}}
+                            @endforeach
                         </p>
                         <div class="articles__list-links">
                             <a

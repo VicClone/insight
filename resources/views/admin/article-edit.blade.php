@@ -36,7 +36,7 @@
                     >
                 </div>
 
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label for="authors">Авторы</label>
                     <input
                         id="authors"
@@ -45,7 +45,7 @@
                         class="form-control"
                         value="{{ $article->authors }}"
                     >
-                </div>
+                </div> --}}
 
                 <div class="form-group mb-3">
                     <label for="doi-link">Ссылка на DOI</label>
@@ -74,6 +74,13 @@
                         Популярное
                     </label>
                 </div>
+
+                <select class="form-select mb-3" multiple aria-label="multiple select example" name="authors[]">
+                    <option>Выберите авторов</option>
+                    @foreach ($authors as $author)
+                        <option {{in_array($author->id, $articleAuthors) ? 'selected' : ''}} value="{{$author->id}}">{{$author->name}}</option>
+                    @endforeach
+                </select>
 
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="file">Загрузить статью</label>

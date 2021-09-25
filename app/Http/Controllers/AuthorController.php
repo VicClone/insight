@@ -18,7 +18,7 @@ class AuthorController extends Controller
 
     public function authorAddSubmit(AuthorRequest $req) {
         $image = $req->file('image');
-        $storedImage = Storage::disk('public')->putFile('image', $image);
+        $storedImage = Storage::disk('public')->putFile('images', $image);
 
         $authorsImage = new Image;
         $authorsImage->name = pathinfo($storedImage)['basename'];

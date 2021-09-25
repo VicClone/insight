@@ -7,7 +7,20 @@
         </nav>
         <section class="article">
             <h1 class="article__title">{{$article->name}}</h1>
-            <p class="article__authors">{{$article->authors}}</p>
+            <div class="article__authors">
+                @foreach ($article->authors as $author)
+                    <div class="article__author">
+                        <img
+                            class="article__author-img"
+                            src="/storage/images/{{$author->image}}"
+                            alt="{{$author->name}}"
+                        >
+                        <p class="article__author-name">
+                            {{$author->name}}
+                        </p>
+                    </div>
+                @endforeach
+            </div>
             <p class="article__links">
                 <a href="{{$article->link_doi}}">
                     {{$article->link_doi}}

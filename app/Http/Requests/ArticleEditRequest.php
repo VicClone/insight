@@ -26,7 +26,6 @@ class ArticleEditRequest extends FormRequest
         return [
             'magazine-id'   => 'required',
             'name'          => 'required|max:250',
-            'authors'       => 'required|max:250',
             'doi-link'      => 'required|max:250',
             'annotation'    => 'required',
         ];
@@ -37,8 +36,6 @@ class ArticleEditRequest extends FormRequest
             'magazine-id.required'  => 'Выберите журнал',
             'name.required'         => 'Введите имя',
             'name.max'              => 'Название должно состоять максимум из 250 символов',
-            'authors.required'      => 'Введите авторов',
-            'authors.max'           => 'Авторы должены быть максимум 250 символов',
             'doi-link.required'     => 'Введите ссылку',
             'doi-link.max'          => 'Ссылка должена быть максимум 250 символов',
             'annotation.required'   => 'Введите аннотацию',

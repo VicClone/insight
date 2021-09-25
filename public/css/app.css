@@ -303,7 +303,22 @@ header.masthead .bg-circle-4 {
 }
 .article__authors {
   font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.article__author {
+  max-width: 150px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+.article__author-img {
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.article__author-name {
   text-align: center;
+  margin: 0;
 }
 .article__links {
   text-align: center;
@@ -405,8 +420,8 @@ main {
   border-radius: 100px;
   display: flex;
   position: fixed;
-  bottom: 100px;
-  left: 100px;
+  bottom: 50px;
+  left: 50px;
   opacity: 0.5;
   transition: 200ms;
   cursor: pointer;
@@ -443,6 +458,7 @@ main {
   -o-object-fit: contain;
      object-fit: contain;
   max-height: 400px;
+  height: 350px;
 }
 .home-carousel__content {
   flex-basis: 50%;
@@ -794,6 +810,9 @@ main {
   }
   .home-carousel__content-btn {
     font-size: 12px;
+  }
+  .home-carousel__preview-img {
+    height: 200px;
   }
 
   .home-info__header {

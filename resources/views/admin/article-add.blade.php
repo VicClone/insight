@@ -32,7 +32,7 @@
                     >
                 </div>
 
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label for="authors">Введите авторов</label>
                     <input
                         id="authors"
@@ -40,7 +40,7 @@
                         type="text"
                         class="form-control"
                     >
-                </div>
+                </div> --}}
 
                 <div class="form-group mb-3">
                     <label for="doi-link">Ссылка на DOI</label>
@@ -68,6 +68,13 @@
                         Поместить в популярное
                     </label>
                 </div>
+
+                <select class="form-select mb-3" multiple aria-label="multiple select example" name="authors[]">
+                    <option>Выберите авторов</option>
+                    @foreach ($authors as $author)
+                        <option value="{{$author->id}}">{{$author->name}}</option>
+                    @endforeach
+                </select>
 
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="file">Загрузить статью</label>

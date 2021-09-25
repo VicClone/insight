@@ -75,8 +75,8 @@ main {
         border-radius: 100px;
         display: flex;
         position: fixed;
-        bottom: 100px;
-        left: 100px;
+        bottom: 50px;
+        left: 50px;
         opacity: 0.5;
         transition: 200ms;
         cursor: pointer;
@@ -116,6 +116,7 @@ main {
             height: 100%;
             object-fit: contain;
             max-height: 400px;
+            height: 350px;
         }
     }
 
@@ -537,6 +538,12 @@ main {
 
             &-btn {
                 font-size: 12px;
+            }
+        }
+
+        &__preview {
+            &-img {
+                height: 200px;
             }
         }
     }

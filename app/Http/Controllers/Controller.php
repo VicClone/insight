@@ -120,6 +120,12 @@ class Controller extends BaseController
         $filename = $file->name;
         $article['file'] = $filename;
 
+        foreach ($article->authors as $author) {
+            $imageId = $author->image_id;
+            $image = Image::find($imageId);
+            $author['image'] = $image->name;
+        }
+
         return view(
             'pages.article',
             [
