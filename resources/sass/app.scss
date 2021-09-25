@@ -100,6 +100,10 @@ main {
     &__magazines {
         display: flex;
         flex-basis: 40%;
+
+        .carousel {
+            width: 100%;
+        }
     }
 }
 
@@ -540,12 +544,6 @@ main {
                 font-size: 12px;
             }
         }
-
-        &__preview {
-            &-img {
-                height: 200px;
-            }
-        }
     }
 
     .home-info {
@@ -668,6 +666,14 @@ main {
 
         &__magazines {
             margin: 20px auto;
+        }
+    }
+
+    .home-carousel {
+        &__preview {
+            &-img {
+                height: 200px;
+            }
         }
     }
 

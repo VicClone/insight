@@ -5,15 +5,15 @@
         <div class="masthead-content">
             <div class="container home-banner">
                 <div class="home-banner__magazines">
-                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($promo as $key => $promoItem)
-                                <div class="carousel-item py-5 px-2 {{$key == 0 ? 'active' : ''}}">
+                                <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
                                     <div class="home-carousel">
                                         <div class="home-carousel__preview">
                                             <img
                                                 src="/storage/images/{{$promoItem->img}}"
-                                                class="home-carousel__preview-img"
+                                                class="home-carousel__preview-img d-block"
                                                 alt="{{$promoItem->name}}"
                                             >
                                         </div>
@@ -35,11 +35,11 @@
                                 </div>
                             @endforeach
                         </div>
-                        <button class="carousel-btn carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <button class="carousel-btn carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-btn carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <button class="carousel-btn carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
