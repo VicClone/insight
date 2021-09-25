@@ -175,9 +175,7 @@
                                             № {{$article->number}} {{$article->year}} год
                                         </p>
                                         <p class="popular-articles__authors">
-                                            @foreach ($article->authors as $key=>$author)
-                                                {{$author->name}}{{$key == count($article->authors) - 1 ? '' : ','}}
-                                            @endforeach
+                                            {{$article->authors}}
                                         </p>
                                     </a>
                                 </li>

@@ -24,7 +24,8 @@ class AuthorEditRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'required|max:250'
+            'name'  => 'required|max:250',
+            'sort'  => 'required',
         ];
     }
 
@@ -32,6 +33,7 @@ class AuthorEditRequest extends FormRequest
         return [
             'name.required'         => 'Введите имя',
             'name.max'              => 'Имя должно состоять максимум из 250 символов',
+            'sort.required'         => 'Введите позицию',
         ];
     }
 }

@@ -24,10 +24,11 @@ class AuthorController extends Controller
         $authorsImage->name = pathinfo($storedImage)['basename'];
         $authorsImage->save();
 
-        $article = new Author;
-        $article->name = $req->input('name');
-        $article->image_id = $authorsImage->id;
-        $article->save();
+        $author = new Author;
+        $author->name = $req->input('name');
+        $author->image_id = $authorsImage->id;
+        $author->sort = $req->input('sort');
+        $author->save();
 
         return $this->authorList();
     }
@@ -59,6 +60,7 @@ class AuthorController extends Controller
         }
 
         $author->name = $req->input('name');
+        $author->sort = $req->input('sort');
         $author->save();
 
         return $this->authorList();

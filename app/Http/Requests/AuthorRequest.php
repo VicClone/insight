@@ -25,6 +25,7 @@ class AuthorRequest extends FormRequest
     {
         return [
             'name'  => 'required|max:250',
+            'sort'  => 'required',
             'image'  => 'required',
         ];
     }
@@ -32,6 +33,7 @@ class AuthorRequest extends FormRequest
     public function messages() {
         return [
             'name.required'         => 'Введите имя',
+            'sort.required'         => 'Введите позицию',
             'name.max'              => 'Имя должно состоять максимум из 250 символов',
             'image.required'         => 'Добавьте фото',
         ];

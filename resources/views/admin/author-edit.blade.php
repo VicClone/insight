@@ -30,6 +30,17 @@
                     >
                 </div>
 
+                <div class="form-group mb-3">
+                    <label for="sort">Позиция</label>
+                    <input
+                        id="sort"
+                        name="sort"
+                        type="number"
+                        class="form-control"
+                        value="{{$author->sort}}"
+                    >
+                </div>
+
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="image">Загрузить фото</label>
                     <input type="file" class="form-control" id="image" name="image">

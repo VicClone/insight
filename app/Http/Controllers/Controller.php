@@ -43,6 +43,7 @@ class Controller extends BaseController
             $magazine = Magazine::find($article->magazine_id);
             $article['number'] = $magazine->number;
             $article['year'] = $magazine->year;
+            $article['authors'] = $article->authors->sortBy('sort')->pluck('name')->join(', ');
         }
 
         return view(
@@ -102,6 +103,7 @@ class Controller extends BaseController
             $file = File::find($fileId);
             $filename = $file->name;
             $article['file'] = $filename;
+            $article['authors'] = $article->authors->sortBy('sort')->pluck('name')->join(', ');
         }
 
         return view(
@@ -120,11 +122,15 @@ class Controller extends BaseController
         $filename = $file->name;
         $article['file'] = $filename;
 
-        foreach ($article->authors as $author) {
+        $authors = $article->authors->sortBy('sort');
+
+        foreach ($authors as $author) {
             $imageId = $author->image_id;
             $image = Image::find($imageId);
             $author['image'] = $image->name;
         }
+
+        $article['authors'] = $authors;
 
         return view(
             'pages.article',
