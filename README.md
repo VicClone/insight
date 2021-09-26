@@ -1,5 +1,6 @@
 # Инструкция по деплою
 
+* >=php7.4
 * Создать пустую базу данных
 * Установить composer https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04-ru
 * Выполнить git clone https://github.com/VicClone/insight.git
@@ -14,3 +15,5 @@
 * * php artisan view:cache
 * * php artisan storage:link
 * В nginx или apache путь указывать к insight/public/
+
+Официальная инструкция (https://laravel.com/docs/8.x/deployment)
