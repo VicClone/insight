@@ -7,10 +7,10 @@
 * Скопировать .env.example в .env
 * Заполнить в .env данные для базы данных
 * Выполнить:
-** composer install --optimize-autoloader --no-dev
-** php artisan key:generate
-** php artisan config:cache
-** php artisan route:cache
-** php artisan view:cache
-** php artisan storage:link
+* * composer install --optimize-autoloader --no-dev
+* * php artisan key:generate
+* * php artisan config:cache
+* * php artisan route:cache
+* * php artisan view:cache
+* * php artisan storage:link
 * В nginx или apache путь указывать к insight/public/
