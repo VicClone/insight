@@ -13,6 +13,7 @@
 * * php artisan config:cache
 * * php artisan route:cache
 * * php artisan view:cache
+* * php artisan migrate
 * * php artisan storage:link
 * В nginx или apache путь указывать к insight/public/
 
