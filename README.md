@@ -1,6 +1,6 @@
 # Инструкция по деплою
 
-* \>=php7.4
+* php\>=7.4
 * Создать пустую базу данных
 * Установить composer https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04-ru
 * Выполнить git clone https://github.com/VicClone/insight.git
