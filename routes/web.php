@@ -38,10 +38,6 @@ Route::get('/article/{id}',
     [App\Http\Controllers\Controller::class, 'article']
 )->name('article');
 
-Route::get('/home2', function () {
-    return view('pages.home');
-})->name('home');
-
 Route::get('/editor-in-chief', function() {
     return view('pages.chiefEditor');
 })->name('chiefEditor');

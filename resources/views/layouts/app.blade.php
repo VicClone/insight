@@ -4,7 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Insihgt</title>
+        <title>ИНСАЙТ - журнал</title>
+        <meta name="keywords" content="журнал, Инсайт, insight, РГППУ, Инновационная научная современная академическая исследовательская траектория (ИНСАЙТ)">
+        <meta name="description" content="Инсайт - журнал молодых ученых «Инновационная научная современная академическая исследовательская траектория (ИНСАЙТ)», созданного советом молодых ученых Российского государственного профессионально-педагогического университета.">
+        <meta property="og:site_name" content="ИНСАЙТ">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://edinsight.ru/">
+        <meta property="og:title" content="Журнал «ИНСАЙТ»">
+        <meta property="og:image:type" content="image/png">
+		<meta property="og:image" content="http://edinsight.ru/img/magazine1.jpg">
+        <meta property="og:description" content="Журнал журнал молодых ученых «Инновационная научная современная академическая исследовательская траектория (ИНСАЙТ)»">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="http://edinsight.ru">
+        <meta name="twitter:url" content="http://edinsight.ru">
+        <meta name="twitter:title" content="Журнал «ИНСАЙТ»">
+
+        <meta property="vk:type" content="article">
+        <meta property="vk:url" content="http://edinsight.ru">
+        <meta property="vk:title" content="Журнал «ИНСАЙТ»">
+		<meta property="vk:image" content="http://edinsight.ru/img/magazine1.jpg">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
