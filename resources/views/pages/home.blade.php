@@ -114,7 +114,14 @@
                             alt="Главный редактор"
                         >
                         <p class="about__сhief-editor-position">Главный редактор</p>
-                        <p class="about__сhief-editor-name">Коновалов Антон Андреевич</p>
+                        <p class="about__сhief-editor-name">
+                            <a
+                                href="{{ route('chiefEditor') }}"
+                                class="staff__name"
+                            >
+                                Коновалов Антон Андреевич
+                            </a>
+                        </p>
                     </div>
                     <h2 class="featurette-heading about__heading">Уважаемые читатели!</h2>
                     <div class="base-text">
