@@ -348,10 +348,34 @@ header.masthead .bg-circle-4 {
 .annotation {
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 .annotation__title {
   font-size: 22px;
   text-align: center;
+}
+.annotation__text {
+  margin: 0;
+}
+.annotation__collapse-icon {
+  width: 25px;
+  transition: 200ms;
+  transform: rotate(-90deg);
+  margin-left: 10px;
+}
+.annotation__collapse-btn {
+  color: #000;
+  text-decoration: none;
+  transition: 200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.annotation__collapse-btn:hover {
+  color: #ec174f;
+}
+.annotation__collapse-btn.collapsed .annotation__collapse-icon {
+  transform: rotate(90deg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -372,8 +396,17 @@ header.masthead .bg-circle-4 {
     margin-bottom: 25px;
   }
 
+  .annotation {
+    margin-bottom: 25px;
+  }
   .annotation__title {
     font-size: 20px;
+  }
+  .annotation__collapse-icon {
+    width: 20px;
+    transition: 200ms;
+    transform: rotate(-90deg);
+    margin-left: 5px;
   }
 }
 body {

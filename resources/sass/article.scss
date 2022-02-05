@@ -63,10 +63,45 @@
 .annotation {
     max-width: 900px;
     margin: 0 auto;
+    margin-bottom: 40px;
 
     &__title {
         font-size: 22px;
         text-align: center;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__collapse {
+        &-icon {
+            width: 25px;
+            transition: 200ms;
+            transform: rotate(-90deg);
+            margin-left: 10px;
+
+        }
+
+        &-btn {
+            color: $black;
+            text-decoration: none;
+            transition: 200ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                color: $primary;
+            }
+
+            &.collapsed {
+                .annotation__collapse-icon {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
     }
 }
 
@@ -94,8 +129,19 @@
     }
 
     .annotation {
+        margin-bottom: 25px;
+
         &__title {
             font-size: 20px;
+        }
+
+        &__collapse {
+            &-icon {
+                width: 20px;
+                transition: 200ms;
+                transform: rotate(-90deg);
+                margin-left: 5px;
+            }
         }
     }
 }

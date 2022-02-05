@@ -36,16 +36,16 @@
                     >
                 </div>
 
-                {{-- <div class="form-group mb-3">
-                    <label for="authors">Авторы</label>
+                <div class="form-group mb-3">
+                    <label for="english-name">Введите название на английском</label>
                     <input
-                        id="authors"
-                        name="authors"
+                        id="english-name"
+                        name="english-name"
                         type="text"
                         class="form-control"
-                        value="{{ $article->authors }}"
+                        value="{{ $article->english_name }}"
                     >
-                </div> --}}
+                </div>
 
                 <div class="form-group mb-3">
                     <label for="doi-link">Ссылка на DOI</label>
@@ -66,6 +66,36 @@
                         type="text"
                         class="form-control"
                     >{{ $article->annotation }}</textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="for-citation">Для цитирования</label>
+                    <textarea
+                        id="for-citation"
+                        name="for-citation"
+                        type="text"
+                        class="form-control"
+                    >{{ $article->for_citation }}</textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="for-citation-english">Для цитирования на английском</label>
+                    <textarea
+                        id="for-citation-english"
+                        name="for-citation-english"
+                        type="text"
+                        class="form-control"
+                    >{{ $article->for_citation_english }}</textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="bibliography">Список литературы</label>
+                    <textarea
+                        id="bibliography"
+                        name="bibliography"
+                        type="text"
+                        class="form-control"
+                    >{{ $article->bibliography }}</textarea></textarea>
                 </div>
 
                 <div class="form-check mb-3">

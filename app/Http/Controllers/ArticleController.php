@@ -38,9 +38,13 @@ class ArticleController extends Controller
         $article = new Article;
         $article->magazine_id = $req->input('magazine-id');
         $article->name = $req->input('name');
+        $article->english_name = $req->input('english-name');
         $article->link_doi = $req->input('doi-link');
         $article->is_popular = boolval($req->input('is-popular'));
         $article->annotation = $req->input('annotation');
+        $article->for_citation = $req->input('for-citation');
+        $article->for_citation_english = $req->input('for-citation-english');
+        $article->bibliography = $req->input('bibliography');
         $article->sort = 1;
         $article->file_id = $articleFile->id;
 
@@ -102,9 +106,13 @@ class ArticleController extends Controller
         }
 
         $article->name = $req->input('name');
+        $article->english_name = $req->input('english-name');
         $article->link_doi = $req->input('doi-link');
         $article->is_popular = boolval($req->input('is-popular'));
         $article->annotation = $req->input('annotation');
+        $article->for_citation = $req->input('for-citation');
+        $article->for_citation_english = $req->input('for-citation-english');
+        $article->bibliography = $req->input('bibliography');
         $article->sort = 1;
 
         $article->save();
