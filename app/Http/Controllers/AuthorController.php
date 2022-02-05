@@ -28,6 +28,8 @@ class AuthorController extends Controller
         $author->name = $req->input('name');
         $author->image_id = $authorsImage->id;
         $author->sort = $req->input('sort');
+        $author->link = $req->input('link');
+        $author->organization = $req->input('organization');
         $author->save();
 
         return $this->authorList();
@@ -61,6 +63,8 @@ class AuthorController extends Controller
 
         $author->name = $req->input('name');
         $author->sort = $req->input('sort');
+        $author->link = $req->input('link');
+        $author->organization = $req->input('organization');
         $author->save();
 
         return $this->authorList();

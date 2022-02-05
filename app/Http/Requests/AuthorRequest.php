@@ -24,18 +24,22 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'required|max:250',
-            'sort'  => 'required',
-            'image'  => 'required',
+            'name'          => 'required|max:250',
+            'sort'          => 'required',
+            'image'         => 'required',
+            'link'          => 'max:250',
+            'organization'  => 'max:250'
         ];
     }
 
     public function messages() {
         return [
-            'name.required'         => 'Введите имя',
-            'sort.required'         => 'Введите позицию',
-            'name.max'              => 'Имя должно состоять максимум из 250 символов',
-            'image.required'         => 'Добавьте фото',
+            'name.required'     => 'Введите имя',
+            'sort.required'     => 'Введите позицию',
+            'name.max'          => 'Имя должно состоять максимум из 250 символов',
+            'image.required'    => 'Добавьте фото',
+            'link.max'          => 'Ссылка должна состоять максимум из 250 символов',
+            'organization.max'  => 'Организация должна состоять максимум из 250 символов',
         ];
     }
 }

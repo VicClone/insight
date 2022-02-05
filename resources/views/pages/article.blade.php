@@ -16,7 +16,12 @@
                             alt="{{$author->name}}"
                         >
                         <p class="article__author-name">
-                            {{$author->name}}
+                            <a class="article__author-link" target="_blank" href="{{$author->link}}">
+                                {{$author->name}}
+                            </a>
+                        </p>
+                        <p class="article__author-organization">
+                            {{$author->organization}}
                         </p>
                     </div>
                 @endforeach

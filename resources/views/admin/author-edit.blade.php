@@ -31,6 +31,26 @@
                 </div>
 
                 <div class="form-group mb-3">
+                    <label for="link">Введите ссылку</label>
+                    <input
+                        name="link"
+                        type="text"
+                        class="form-control"
+                        value="{{$author->link}}"
+                    >
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="organization">Введите организацию</label>
+                    <input
+                        name="organization"
+                        type="text"
+                        class="form-control"
+                        value="{{$author->organization}}"
+                    >
+                </div>
+
+                <div class="form-group mb-3">
                     <label for="sort">Позиция</label>
                     <input
                         id="sort"
