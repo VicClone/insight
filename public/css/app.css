@@ -487,6 +487,7 @@ main {
 .home-banner {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 .home-banner__magazines {
   display: flex;
@@ -518,6 +519,7 @@ main {
 }
 .home-carousel__content-text {
   text-align: center;
+  margin: 0;
 }
 
 .home-info {
@@ -1002,6 +1004,27 @@ main {
 
   .carousel-btn {
     display: none;
+  }
+
+  .double-list {
+    flex-direction: column;
+  }
+  .double-list__item {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .home-carousel {
+    flex-direction: column;
+  }
+  .home-carousel__preview {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .home-carousel__content {
+    flex-basis: 100%;
+    padding-left: 0;
   }
 }
 

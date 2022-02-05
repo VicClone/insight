@@ -96,6 +96,7 @@ main {
 .home-banner {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 30px;
 
     &__magazines {
         display: flex;
@@ -130,6 +131,7 @@ main {
 
         &-text {
             text-align: center;
+            margin: 0;
         }
     }
 }
@@ -729,5 +731,29 @@ main {
 
     .carousel-btn {
         display: none;
+    }
+
+    .double-list {
+        flex-direction: column;
+
+        &__item {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .home-carousel {
+        flex-direction: column;
+
+        &__preview {
+            flex-basis: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &__content {
+            flex-basis: 100%;
+            padding-left: 0;
+        }
     }
 }
