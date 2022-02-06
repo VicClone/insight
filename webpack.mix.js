@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .sass('resources/sass/app.scss', 'public/css')
     .copy('resources/img', 'public/img')
-    .js('resources/js/home.js', 'public/js');
+    .js('resources/js/home.js', 'public/js')
+    .js('resources/js/article.js', 'public/js');

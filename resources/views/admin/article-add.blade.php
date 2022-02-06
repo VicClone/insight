@@ -84,7 +84,10 @@
 
                 <div class="form-group mb-3">
                     <label for="bibliography">Список литературы</label>
+                    <div id="editor">
+                    </div>
                     <textarea
+                        style="display: none"
                         id="bibliography"
                         name="bibliography"
                         type="text"
@@ -119,4 +122,8 @@
         </div>
     </div>
 </div>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="{{ asset('js/article.js') }}"></script>
 @endsection

@@ -104,7 +104,7 @@
                     </h2>
                     <div class="base-text">
                         <p class="annotation__text collapse multi-collapse" id="bibliography">
-                            {{$article->bibliography}}
+                            {!! $article->bibliography !!}
                         </p>
                     </div>
                 </div>
