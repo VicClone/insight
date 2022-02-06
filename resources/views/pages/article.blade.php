@@ -57,6 +57,26 @@
                 </div>
             </div>
 
+            @if ($article->annotation_english)
+                <div class="annotation">
+                    <h2 class="annotation__title">
+                        <a class="annotation__collapse-btn collapsed" data-bs-toggle="collapse" href="#annotation-english" role="button" aria-expanded="false">
+                            <span>Abstract</span>
+                            <img
+                                class="annotation__collapse-icon"
+                                src="{{asset('img/icons/arrow_forward.svg')}}"
+                                alt="arrow"
+                            >
+                        </a>
+                    </h2>
+                    <div class="base-text collapse multi-collapse" id="annotation-english">
+                        <p class="annotation__text">
+                            {{$article->annotation_english}}
+                        </p>
+                    </div>
+                </div>
+            @endif
+
             @if ($article->for_citation)
                 <div class="annotation">
                     <h2 class="annotation__title">
@@ -102,10 +122,8 @@
                             >
                         </a>
                     </h2>
-                    <div class="base-text">
-                        <p class="annotation__text collapse multi-collapse" id="bibliography">
-                            {!! $article->bibliography !!}
-                        </p>
+                    <div class="annotation__text collapse multi-collapse base-text" id="bibliography">
+                        {!! $article->bibliography !!}
                     </div>
                 </div>
             @endif

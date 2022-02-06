@@ -42,6 +42,7 @@ class ArticleController extends Controller
         $article->link_doi = $req->input('doi-link');
         $article->is_popular = boolval($req->input('is-popular'));
         $article->annotation = $req->input('annotation');
+        $article->annotation_english = $req->input('annotation-english');
         $article->for_citation = $req->input('for-citation');
         $article->for_citation_english = $req->input('for-citation-english');
         $article->bibliography = $req->input('bibliography');
@@ -110,6 +111,7 @@ class ArticleController extends Controller
         $article->link_doi = $req->input('doi-link');
         $article->is_popular = boolval($req->input('is-popular'));
         $article->annotation = $req->input('annotation');
+        $article->annotation_english = $req->input('annotation-english');
         $article->for_citation = $req->input('for-citation');
         $article->for_citation_english = $req->input('for-citation-english');
         $article->bibliography = $req->input('bibliography');

@@ -63,6 +63,16 @@
                 </div>
 
                 <div class="form-group mb-3">
+                    <label for="annotation-english">Аннотация на английском</label>
+                    <textarea
+                        id="annotation-english"
+                        name="annotation-english"
+                        type="text"
+                        class="form-control"
+                    ></textarea>
+                </div>
+
+                <div class="form-group mb-3">
                     <label for="for-citation">Для цитирования</label>
                     <textarea
                         id="for-citation"
