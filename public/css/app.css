@@ -308,12 +308,13 @@ header.masthead .bg-circle-4 {
   justify-content: center;
 }
 .article__author {
-  max-width: 150px;
+  max-width: 200px;
   margin: 0 20px;
   margin-bottom: 20px;
 }
 .article__author-img {
   max-width: 100%;
+  margin: 0 auto;
   margin-bottom: 15px;
   width: 150px;
   height: 200px;
@@ -324,6 +325,9 @@ header.masthead .bg-circle-4 {
 .article__author-name, .article__author-organization {
   text-align: center;
   margin: 0;
+}
+.article__author-organization {
+  font-size: 14px;
 }
 .article__author-name {
   margin-bottom: 5px;
@@ -388,6 +392,9 @@ header.masthead .bg-circle-4 {
   }
   .article__authors {
     font-size: 14px;
+  }
+  .article__author {
+    font-size: 12px;
   }
   .article__links {
     font-size: 14px;

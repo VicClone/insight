@@ -15,12 +15,13 @@
     }
 
     &__author {
-        max-width: 150px;
+        max-width: 200px;
         margin: 0 20px;
         margin-bottom: 20px;
 
         &-img {
             max-width: 100%;
+            margin: 0 auto;
             margin-bottom: 15px;
             width: 150px;
             height: 200px;
@@ -32,6 +33,10 @@
         &-organization {
             text-align: center;
             margin: 0;
+        }
+
+        &-organization {
+            font-size: 14px;
         }
 
         &-name {
@@ -117,6 +122,10 @@
 
         &__authors {
             font-size: 14px;
+        }
+
+        &__author {
+            font-size: 12px;
         }
 
         &__links {
