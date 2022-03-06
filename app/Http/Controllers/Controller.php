@@ -65,7 +65,8 @@ class Controller extends BaseController
         }
 
         $yearsUnique = array_unique($years);
-
+        natsort($yearsUnique);
+        $yearsUnique = array_reverse($yearsUnique);
         $result = [];
 
         foreach($yearsUnique as $year) {
