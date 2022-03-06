@@ -1,1 +1,16 @@
-(()=>{var e=new Quill("#editor",{theme:"snow"}),o=document.querySelector("#bibliography"),r=document.querySelector("#editor .ql-editor");e.on("text-change",(function(e,t,n){var i=r.innerHTML;o.value=i}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*********************************!*\
+  !*** ./resources/js/article.js ***!
+  \*********************************/
+var quill = new Quill('#editor', {
+  theme: 'snow'
+});
+var quillTextarea = document.querySelector('#bibliography');
+var quillContentBlock = document.querySelector('#editor .ql-editor');
+quill.on('text-change', function (delta, oldDelta, source) {
+  var editorContent = quillContentBlock.innerHTML;
+  quillTextarea.value = editorContent;
+});
+/******/ })()
+;

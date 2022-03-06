@@ -84,6 +84,17 @@
 
         <footer class="footer">
             <p class="footer__text">Контакты: <a class="base-link" href="mailto:insight-rsvpu@mail.ru">insight-rsvpu@mail.ru</a></p>
+            <div class="footer__sociable">
+                <a class="footer__sociable-link" href="https://vk.com/insight_rsvpu" target="_blank">
+                    <img class="footer__sociable-icon" src="{{asset('img/icons/vk.svg')}}" alt="vk">
+                </a>
+                <a class="footer__sociable-link" href="https://www.facebook.com/INSIGHTscientificJournal/" target="_blank">
+                    <img class="footer__sociable-icon" src="{{asset('img/icons/fb.svg')}}" alt="fb">
+                </a>
+                <a class="footer__sociable-link" style="display: none" shref="https://www.facebook.com/INSIGHTscientificJournal/" target="_blank">
+                    <img class="footer__sociable-icon" src="{{asset('img/icons/insta.svg')}}" alt="insta">
+                </a>
+            </div>
         </footer>
 
 

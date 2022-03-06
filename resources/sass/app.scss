@@ -524,6 +524,30 @@ main {
     &__text {
         text-align: center;
     }
+
+    &__sociable {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+
+        &-link {
+            display: block;
+            width: 25px;
+            margin: 0 5px;
+            transition: 200ms;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &-icon {
+            display: block;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
 }
 
 
