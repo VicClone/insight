@@ -96,8 +96,13 @@ class Controller extends BaseController
 
         $imageId = $magazine->cover_id;
         $image = Image::find($imageId);
-        $filename = $image->name;
-        $magazine['img'] = $filename;
+        $imagename = $image->name;
+        $magazine['img'] = $imagename;
+
+        $fileId = $magazine->file_id;
+        $file = File::find($fileId);
+        $filename = $file->name;
+        $magazine['file'] = $filename;
 
         foreach ($articles as $article) {
             $fileId = $article->file_id;

@@ -24,7 +24,7 @@ class MagazineController extends Controller
         $cover->save();
 
         $magazineFile = new File;
-        $magazineFile->name = pathinfo($storedCover)['basename'];
+        $magazineFile->name = pathinfo($storedFile)['basename'];
         $magazineFile->save();
 
         $magazine = new Magazine;

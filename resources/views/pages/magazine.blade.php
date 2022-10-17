@@ -21,7 +21,7 @@
                     {{$magazine->name}}
                 </p>
 
-                <a href="/storage/files/{{$magazine->file}}" class="btn btn-primary magazine__info-btn">Скачать</a>
+                <a href="/storage/files/{{$magazine->file}}" class="btn btn-primary magazine__info-btn" target="_blank">Скачать</a>
             </div>
         </section>
         <section class="articles">
