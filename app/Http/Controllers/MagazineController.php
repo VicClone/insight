@@ -64,13 +64,29 @@ class MagazineController extends Controller
         if ($cover) {
             $coverId = $magazine->cover_id;
             $oldCover = Image::find($coverId);
-            $newCover = Storage::disk('public')->putFileAs('images', $cover, $oldCover->name);
+            Storage::disk('public')->delete("images/$oldCover->name");
+            $oldCover->delete();
+
+            $storedCover = Storage::disk('public')->putFile('images', $cover);
+            $cover = new Image;
+            $cover->name = pathinfo($storedCover)['basename'];
+            $cover->save();
+
+            $magazine->cover_id = $cover->id;
         }
 
         if ($file) {
             $fileId = $magazine->file_id;
             $oldFile = File::find($fileId);
-            $newFile = Storage::disk('public')->putFileAs('files', $file, $oldFile->name);
+            Storage::disk('public')->delete("files/$oldFile->name");
+            $oldFile->delete();
+
+            $storedFile = Storage::disk('public')->putFile('files', $file);
+            $magazineFile = new File;
+            $magazineFile->name = pathinfo($storedFile)['basename'];
+            $magazineFile->save();
+
+            $magazine->file_id = $magazineFile->id;
         }
 
         $magazine->name = $req->input('name');
