@@ -61,7 +61,16 @@ class PromoController extends Controller
         if ($image) {
             $imageId = $promo->image_id;
             $oldImage = Image::find($imageId);
-            $newImage = Storage::disk('public')->putFileAs('images', $image, $oldImage->name);
+
+            Storage::disk('public')->delete("images/$oldImage->name");
+            $oldImage->delete();
+
+            $storedImage = Storage::disk('public')->putFile('images', $image);
+            $newImage = new Image;
+            $newImage->name = pathinfo($storedImage)['basename'];
+            $newImage->save();
+
+            $promo->image_id = $newImage->id;
         }
 
         $promo->name = $req->input('name');
@@ -81,7 +90,7 @@ class PromoController extends Controller
         $promo = Promo::find($id);
         $imageId = $promo->image_id;
         $image = Image::find($imageId);
-        Storage::delete('images/'.$image->name);
+        Storage::disk('public')->delete("images/$image->name");
 
         $image->delete();
         $promo->delete();
