@@ -103,8 +103,17 @@ class ArticleController extends Controller
         if ($file) {
             $fileId = $article->file_id;
             $oldFile = File::find($fileId);
-            $newFile = Storage::disk('public')->putFileAs('file', $file, $oldFile->name);
+            Storage::disk('public')->delete("files/$oldFile->name");
+            $oldFile->delete();
+
+            $storedFile = Storage::disk('public')->putFile('files', $file);
+            $newFile = new File;
+            $newFile->name = pathinfo($storedFile)['basename'];
+            $newFile->save();
+
+            $article->file_id = $newFile->id;
         }
+
 
         $article->name = $req->input('name');
         $article->english_name = $req->input('english-name');
@@ -133,7 +142,7 @@ class ArticleController extends Controller
         $fileId = $article->file_id;
         $file = File::find($fileId);
 
-        Storage::delete('file/'.$file->name);
+        Storage::disk('public')->delete("files/$file->name");
 
         $authors = [];
 
