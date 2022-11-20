@@ -28,6 +28,8 @@ class TeamEditRequest extends FormRequest
             'position'  => 'required|max:250',
             'sort'      => '',
             'link'      => 'required|max:250',
+            'description'   => 'max:65500',
+            'interview'     => 'max:65500',
         ];
     }
 
@@ -39,6 +41,8 @@ class TeamEditRequest extends FormRequest
             'position.max'          => 'Выберите компанию',
             'link.required'         => 'Введите ссылку',
             'link.max'              => 'Ссылка должно состоять максимум из 250 символов',
+            'description.max'       => 'Описание должно состоять максимум из 65500 символов',
+            'interview.max'         => 'Ссылка должно состоять максимум из 65500 символов',
         ];
     }
 }

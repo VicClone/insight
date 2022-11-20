@@ -145,4 +145,23 @@ class Controller extends BaseController
             ]
         );
     }
+
+    public function team($teamId) {
+        $team = Team::find($teamId);
+
+        if ($team->show_interview == 0) {
+            return $this->home();
+        }
+
+        $avatarId = $team->avatar_id;
+        $avatar = Image::find($avatarId);
+        $team['avatar'] = $avatar->name;
+
+        return view(
+            'pages.interview',
+            [
+                'team' => $team
+            ]
+        );
+    }
 }

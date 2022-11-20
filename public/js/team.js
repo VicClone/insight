@@ -1,0 +1,1 @@
+(()=>{var e=new Quill("#editor",{theme:"snow"}),t=document.querySelector("#interview"),n=document.querySelector("#editor .ql-editor");e.on("text-change",(function(e,r,o){var i=n.innerHTML;t.value=i}))})();

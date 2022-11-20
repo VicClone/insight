@@ -1,0 +1,57 @@
+.team {
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+
+    &__avatar {
+        max-height: 450px;
+        max-width: 300px;
+        flex-basis: 300px;
+
+        &_img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__description {
+        padding-left: 20px;
+        max-width: 600px;
+
+        &_name {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .team {
+        &__info {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        &__avatar {
+            max-height: 300px;
+            margin-bottom: 20px;
+        }
+
+        &__description {
+            max-width: 100%;
+            text-align: center;
+            padding-left: 0;
+
+            &-name {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

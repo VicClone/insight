@@ -19,4 +19,5 @@ mix.js('resources/js/app.js', 'public/js')
     .copy('resources/img', 'public/img')
     .js('resources/js/home.js', 'public/js')
     .js('resources/js/article.js', 'public/js')
+    .js('resources/js/team.js', 'public/js')
     .version();

@@ -32,6 +32,9 @@ class TeamController extends Controller
         $team->avatar_id = $avatar->id;
         $team->sort = $req->input('sort');
         $team->link = $req->input('link');
+        $team->show_interview = $req->input('show-interview') ? 1 : 0;
+        $team->description = $req->input('description');
+        $team->interview = $req->input('interview');
         $team->save();
 
         return $this->teamList();
@@ -46,16 +49,28 @@ class TeamController extends Controller
     public function teamEditSubmit($teamId, TeamEditRequest $req) {
         $team = Team::find($teamId);
         $file = $req->file('avatar');
+
         if ($file) {
             $avatarId = $team->avatar_id;
             $oldAvatar = Image::find($avatarId);
-            $newAvatar = Storage::disk('public')->putFileAs('images', $file, $oldAvatar->name);
+            Storage::disk('public')->delete("images/$oldAvatar->name");
+            $oldAvatar->delete();
+
+            $storedFile = Storage::disk('public')->put('images', $file);
+            $avatar = new Image;
+            $avatar->name = pathinfo($storedFile)['basename'];
+            $avatar->save();
+
+            $team->avatar_id = $avatar->id;
         }
 
         $team->name = $req->input('name');
         $team->position = $req->input('position');
         $team->sort = $req->input('sort');
         $team->link = $req->input('link');
+        $team->show_interview = $req->input('show-interview') ? 1 : 0;
+        $team->description = $req->input('description');
+        $team->interview = $req->input('interview');
         $team->save();
 
         return $this->teamList();
@@ -65,7 +80,7 @@ class TeamController extends Controller
         $team = Team::find($teamId);
         $avatarId = $team->avatar_id;
         $avatar = Image::find($avatarId);
-        Storage::delete('images/'.$avatar->name);
+        Storage::disk('public')->delete("images/$avatar->name");
 
         $avatar->delete();
         $team->delete();

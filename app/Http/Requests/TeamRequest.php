@@ -24,11 +24,13 @@ class TeamRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|max:250',
-            'position'  => 'required|max:250',
-            'avatar'    => 'required',
-            'sort'      => '',
-            'link'      => 'required|max:250',
+            'name'          => 'required|max:250',
+            'position'      => 'required|max:250',
+            'avatar'        => 'required',
+            'sort'          => '',
+            'link'          => 'required|max:250',
+            'description'   => 'max:65500',
+            'interview'     => 'max:65500',
         ];
     }
 
@@ -41,6 +43,8 @@ class TeamRequest extends FormRequest
             'avatar.required'       => 'Выберите аватар',
             'link.required'         => 'Введите ссылку',
             'link.max'              => 'Ссылка должно состоять максимум из 250 символов',
+            'description.max'       => 'Описание должно состоять максимум из 65500 символов',
+            'interview.max'         => 'Ссылка должно состоять максимум из 65500 символов',
         ];
     }
 }

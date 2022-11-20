@@ -42,6 +42,10 @@ Route::get('/editor-in-chief', function() {
     return view('pages.chiefEditor');
 })->name('chiefEditor');
 
+Route::get('/interview/{id}',
+    [App\Http\Controllers\Controller::class, 'team']
+)->name('interview');
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 

@@ -233,7 +233,14 @@
                                 {{$item->name}}
                             </a>
                         </div>
-                        <p class="staff__desc">{{$item->position}}</p>
+                        <p class="staff__desc">
+                            {{$item->position}}<br>
+                            @if ($item->show_interview == 1)
+                                <a class="base-link" href="{{ route('interview', $item->id) }}">
+                                    Читать интервью
+                                </a>
+                            @endif
+                        </p>
                     </div>
                 @endforeach
             </div>

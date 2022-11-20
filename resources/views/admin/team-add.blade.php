@@ -62,6 +62,37 @@
                     <input type="file" class="form-control" id="avatar" name="avatar">
                 </div>
 
+                <div class="form-group mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="show-interview" name="show-interview">
+                        <label class="form-check-label" for="show-interview">
+                            Показывать интервью
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="description">Введите описание</label>
+                    <textarea
+                        class="form-control"
+                        name="description"
+                        id="description"
+                    ></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="interview">Интервью</label>
+                    <div id="editor">
+                    </div>
+                    <textarea
+                        style="display: none"
+                        id="interview"
+                        name="interview"
+                        type="text"
+                        class="form-control"
+                    ></textarea>
+                </div>
+
                 <button type="submit" class="btn btn-primary mt-3">
                   Создать
                 </button>
@@ -70,4 +101,6 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/team.js') }}"></script>
 @endsection
