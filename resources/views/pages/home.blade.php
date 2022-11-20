@@ -170,6 +170,13 @@
                         >
                             <img class="about__index-img" src="{{asset('img/crossref.jpg')}}" alt="index">
                         </a>
+                        <a
+                            class="about__index-link"
+                            href="https://www.ural-press.ru/catalog/97266/8696564/?sphrase_id=382220"
+                            target="_blank"
+                        >
+                            <img class="about__index-img" src="{{asset('img/ural-press.gif')}}" alt="index">
+                        </a>
                     </div>
                     <div class="popular-articles">
                         <h3 class="popular-articles__title">Популярные статьи</h3>
