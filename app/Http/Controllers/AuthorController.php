@@ -58,7 +58,16 @@ class AuthorController extends Controller
         if ($image) {
             $imageId = $author->image_id;
             $oldImage = Image::find($imageId);
-            $newImage = Storage::disk('public')->putFileAs('images', $image, $oldImage->name);
+
+            Storage::disk('public')->delete("images/$oldImage->name");
+            $oldImage->delete();
+
+            $storedImage = Storage::disk('public')->putFile('images', $image);
+            $newImage = new Image;
+            $newImage->name = pathinfo($storedImage)['basename'];
+            $newImage->save();
+
+            $author->image_id = $newImage->id;
         }
 
         $author->name = $req->input('name');
@@ -76,7 +85,7 @@ class AuthorController extends Controller
         $imageId = $author->image_id;
         $image = Image::find($imageId);
 
-        Storage::delete('images/'.$image->name);
+        Storage::disk('public')->delete("images/$image->name");
 
         $image->delete();
         $author->delete();
