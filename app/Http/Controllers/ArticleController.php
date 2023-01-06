@@ -12,17 +12,20 @@ use App\Models\Article;
 use App\Models\Image;
 use App\Models\File;
 use App\Models\Author;
+use App\Models\Headline;
 
 class ArticleController extends Controller
 {
-    public function articleAdd($magazideId) {
-        $magazine = Magazine::find($magazideId);
+    public function articleAdd($magazineId) {
+        $magazine = Magazine::find($magazineId);
         $authors = Author::all();
+        $headlines = Headline::where('magazine_id', $magazineId)->get();
 
         return view('admin.article-add',
             [
                 'magazine' => $magazine,
-                'authors' => $authors
+                'authors' => $authors,
+                'headlines' => $headlines
             ]
         );
     }
@@ -49,6 +52,13 @@ class ArticleController extends Controller
         $article->sort = 1;
         $article->file_id = $articleFile->id;
 
+        $headlineId = $req->input('headline-id');
+
+        if ($headlineId) {
+            $headline = Headline::find($headlineId);
+            $article->headline()->associate($headline);
+        }
+
         $article->save();
 
         $article->authors()->attach($req->input('authors'));
@@ -72,10 +82,11 @@ class ArticleController extends Controller
         );
     }
 
-    public function articleEdit($magazideId, $articleId) {
+    public function articleEdit($magazineId, $articleId) {
         $article = Article::find($articleId);
-        $magazine = Magazine::find($magazideId);
+        $magazine = Magazine::find($magazineId);
         $authors = Author::all();
+        $headlines = Headline::where('magazine_id', $magazineId)->get();
 
         $articleAuthors = [];
 
@@ -89,7 +100,8 @@ class ArticleController extends Controller
                 'article' => $article,
                 'magazine' => $magazine,
                 'authors' => $authors,
-                'articleAuthors' => $articleAuthors
+                'articleAuthors' => $articleAuthors,
+                'headlines' => $headlines
             ]
         );
     }
@@ -124,7 +136,14 @@ class ArticleController extends Controller
         $article->for_citation = $req->input('for-citation');
         $article->for_citation_english = $req->input('for-citation-english');
         $article->bibliography = $req->input('bibliography');
-        $article->sort = 1;
+        $article->sort = $req->input('sort') ? $req->input('sort') : 1;
+
+        $headlineId = $req->input('headline-id');
+
+        if ($headlineId) {
+            $headline = Headline::find($headlineId);
+            $article->headline()->associate($headline);
+        }
 
         $article->save();
 

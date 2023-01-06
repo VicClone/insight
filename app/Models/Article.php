@@ -12,4 +12,9 @@ class Article extends Model
     public function authors() {
         return $this->belongsToMany(Author::class);
     }
+
+    public function headline()
+    {
+        return $this->belongsTo(Headline::class);
+    }
 }

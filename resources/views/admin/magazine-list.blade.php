@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <a
                 type="button"
                 class="btn btn-primary my-2"
@@ -28,6 +28,7 @@
                         <th scope="col">Название</th>
                         <th scope="col">Номер</th>
                         <th scope="col">Год</th>
+                        <th scope="col">Разделы</th>
                         <th scope="col">Статьи</th>
                         <th scope="col">Изменить</th>
                         <th scope="col">Удалить</th>
@@ -40,6 +41,14 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->number }}</td>
                             <td>{{ $item->year }}</td>
+                            <td>
+                                <a
+                                    href="{{ route('headlines-list', $item->id) }}"
+                                    class="btn btn-success"
+                                >
+                                    Открыть разделы
+                                </a>
+                            </td>
                             <td>
                                 <a
                                     href="{{ route('article-list', $item->id) }}"

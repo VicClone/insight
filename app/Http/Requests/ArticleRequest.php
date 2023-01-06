@@ -28,7 +28,8 @@ class ArticleRequest extends FormRequest
             'name'          => 'required|max:250',
             'doi-link'      => 'required|max:250',
             'annotation'    => 'required',
-            'file'          => 'required'
+            'file'          => 'required',
+            'headline-id'   => 'required'
         ];
     }
 
@@ -41,6 +42,7 @@ class ArticleRequest extends FormRequest
             'doi-link.max'          => 'Ссылка должена быть максимум 250 символов',
             'annotation.required'   => 'Введите аннотацию',
             'file.required'         => 'Добавьте файл',
+            'headline-id.required'  => 'Выберете раздел'
         ];
     }
 }

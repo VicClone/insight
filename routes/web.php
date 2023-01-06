@@ -138,6 +138,41 @@ Route::group(['middleware' => 'auth'], function() {
     )->name('article-delete');
 
     Route::get(
+        '/admin/magazine/{magazineId}/headline',
+        [App\Http\Controllers\HeadlineController::class, 'headlineList']
+    )->name('headlines-list');
+
+    Route::get(
+        '/admin/magazine/{magazineId}/headline/add',
+        [App\Http\Controllers\HeadlineController::class, 'headlineAdd']
+    )->name('headline-add');
+
+    Route::post(
+        '/admin/magazine/{magazineId}/headline/add',
+        [App\Http\Controllers\HeadlineController::class, 'headlineAddSubmit']
+    )->name('headline-add-submit');
+
+    Route::get(
+        '/admin/magazine/{magazineId}/headline/{headlineId}',
+        [App\Http\Controllers\HeadlineController::class, 'headlineEdit']
+    )->name('headline-edit');
+
+    Route::get(
+        '/admin/magazine/{magazineId}/headline/{headlineId}',
+        [App\Http\Controllers\HeadlineController::class, 'headlineEdit']
+    )->name('headline-edit');
+
+    Route::post(
+        '/admin/headline/{headlineId}',
+        [App\Http\Controllers\HeadlineController::class, 'headlineEditSubmit']
+    )->name('headline-edit-submit');
+
+    Route::get(
+        '/admin/headline/{headlineId}/delete',
+        [App\Http\Controllers\HeadlineController::class, 'headlineDelete']
+    )->name('headline-delete');
+
+    Route::get(
         '/admin/promo',
         [App\Http\Controllers\PromoController::class, 'promoList']
     )->name('promo-list');

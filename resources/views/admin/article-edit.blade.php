@@ -126,6 +126,13 @@
                     @endforeach
                 </select>
 
+                <select class="form-select mb-3" aria-label="Default select example" name="headline-id">
+                    <option>Выберите раздел</option>
+                    @foreach ($headlines as $headline)
+                        <option {{$article->headline_id == $headline->id ? 'selected' : ''}} value="{{$headline->id}}">{{$headline->title}}</option>
+                    @endforeach
+                </select>
+
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="file">Загрузить статью</label>
                     <input type="file" class="form-control" id="file" name="file">
