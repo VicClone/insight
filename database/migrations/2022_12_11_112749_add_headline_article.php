@@ -14,7 +14,7 @@ class AddHeadlineArticle extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->integer('headline_id');
+            $table->integer('headline_id')->nullable();
         });
     }
 
