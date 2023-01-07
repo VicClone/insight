@@ -270,7 +270,7 @@
                                 alt="{{$item->name}}"
                             >
                             @if ($item->show_interview == 1)
-                                <a class="staff__interview btn btn-secondary" href="{{ route('interview', $item->id) }}">
+                                <a class="staff__interview btn btn-primary" href="{{ route('interview', $item->id) }}">
                                     Читать интервью
                                 </a>
                             @endif
