@@ -28,33 +28,45 @@
             <h2 class="articles__title">
                 Статьи в журнале
             </h2>
-            <ul class="list-group articles__list">
-                @foreach ($articles as $article)
-                    <li class="list-group-item">
-                        <p class="articles__list-title">
-                            {{$article->name}}
+
+            <ul class="headlines__list">
+                @foreach ($headlines as $headline)
+                    <li class="headlines__list-item">
+                        <p class="headlines__list-title">
+                            {{$headline->title}}
                         </p>
-                        <p class="articles__list-text">
-                            {{$article->authors}}
-                        </p>
-                        <div class="articles__list-links">
-                            <a
-                                class="articles__list-link btn btn-primary"
-                                href="/storage/files/{{$article->file}}"
-                                target="_blank"
-                            >
-                                Скачать
-                            </a>
-                            <a
-                                class="articles__list-link btn btn-secondary"
-                                href="{{ route('article', $article->id) }}"
-                            >
-                                Открыть
-                            </a>
-                        </div>
+                        <ul class="articles__list">
+                            @foreach ($headline->articles as $article)
+                                <li class="articles__list-item">
+                                    <div class="articles__list-info">
+                                        <p class="articles__list-title">
+                                            {{$article->name}}
+                                        </p>
+                                        <p class="articles__list-text">
+                                            {{$article->authors}}
+                                        </p>
+                                    </div>
+                                    <div class="articles__list-links">
+                                        <a
+                                            class="articles__list-link btn btn-primary"
+                                            href="/storage/files/{{$article->file}}"
+                                            target="_blank"
+                                        >
+                                            Скачать
+                                        </a>
+                                        <a
+                                            class="articles__list-link btn btn-secondary"
+                                            href="{{ route('article', $article->id) }}"
+                                        >
+                                            Открыть
+                                        </a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
                 @endforeach
-              </ul>
+            </ul>
         </section>
     </section>
 @endsection

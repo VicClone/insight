@@ -237,6 +237,18 @@ header.masthead .bg-circle-4 {
   font-size: 14px;
 }
 
+.headlines__list {
+  list-style: none;
+  padding: 0;
+}
+.headlines__list-item {
+  margin-top: 20px;
+}
+.headlines__list-title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 .articles {
   display: flex;
   flex-direction: column;
@@ -249,10 +261,17 @@ header.masthead .bg-circle-4 {
 }
 .articles__list {
   margin: 0 auto;
+  list-style: none;
+}
+.articles__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .articles__list-title {
   font-size: 16px;
   margin-top: 10px;
+  margin-bottom: 5px;
 }
 .articles__list-text {
   font-size: 14px;
@@ -260,6 +279,7 @@ header.masthead .bg-circle-4 {
 .articles__list-links {
   display: flex;
   justify-content: center;
+  margin-left: 10px;
 }
 .articles__list-link {
   margin: 0 10px;
@@ -279,15 +299,29 @@ header.masthead .bg-circle-4 {
     font-size: 12px;
   }
 
+  .headlines__list-item {
+    margin-top: 15px;
+  }
+  .headlines__list-title {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
   .articles__title {
     font-size: 20px;
     margin-bottom: 15px;
+  }
+  .articles__list-item {
+    flex-direction: column;
   }
   .articles__list-title {
     font-size: 14px;
   }
   .articles__list-text {
     font-size: 12px;
+  }
+  .articles__list-links {
+    margin-left: 0;
   }
   .articles__list-link {
     font-size: 12px;

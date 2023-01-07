@@ -15,6 +15,7 @@ use App\Models\Promo;
 use App\Models\Article;
 use App\Models\Team;
 use App\Models\Magazine;
+use App\Models\Headline;
 
 class Controller extends BaseController
 {
@@ -93,6 +94,7 @@ class Controller extends BaseController
     public function magazine($magazineId) {
         $magazine = Magazine::find($magazineId);
         $articles = Article::where('magazine_id', $magazineId)->get();
+        $headlines = Headline::where('magazine_id', $magazineId)->get()->sortBy('sort');
 
         $imageId = $magazine->cover_id;
         $image = Image::find($imageId);
@@ -112,11 +114,16 @@ class Controller extends BaseController
             $article['authors'] = $article->authors->sortBy('sort')->pluck('name')->join(', ');
         }
 
+        foreach($headlines as $headline) {
+            $headline['articles'] = $articles->where('headline_id', $headline->id)->sortBy('sort');
+        }
+
         return view(
             'pages.magazine',
             [
                 'magazine' => $magazine,
-                'articles' => $articles
+                'articles' => $articles,
+                'headlines' => $headlines
             ]
         );
     }
