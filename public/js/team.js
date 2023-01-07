@@ -1,16 +1,1 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
-/*!******************************!*\
-  !*** ./resources/js/team.js ***!
-  \******************************/
-var quill = new Quill('#editor', {
-  theme: 'snow'
-});
-var quillTextarea = document.querySelector('#interview');
-var quillContentBlock = document.querySelector('#editor .ql-editor');
-quill.on('text-change', function (delta, oldDelta, source) {
-  var editorContent = quillContentBlock.innerHTML;
-  quillTextarea.value = editorContent;
-});
-/******/ })()
-;
+(()=>{var e=new Quill("#editor",{theme:"snow"}),t=document.querySelector("#interview"),n=document.querySelector("#editor .ql-editor");e.on("text-change",(function(e,r,o){var i=n.innerHTML;t.value=i}))})();
