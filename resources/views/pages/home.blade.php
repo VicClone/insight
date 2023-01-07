@@ -269,6 +269,11 @@
                                 src="/storage/images/{{$item->img}}"
                                 alt="{{$item->name}}"
                             >
+                            @if ($item->show_interview == 1)
+                                <a class="staff__interview btn btn-secondary" href="{{ route('interview', $item->id) }}">
+                                    Читать интервью
+                                </a>
+                            @endif
                         </div>
                         <div>
                             <a
@@ -281,11 +286,6 @@
                         </div>
                         <p class="staff__desc">
                             {{$item->position}}<br>
-                            @if ($item->show_interview == 1)
-                                <a class="base-link" href="{{ route('interview', $item->id) }}">
-                                    Читать интервью
-                                </a>
-                            @endif
                         </p>
                     </div>
                 @endforeach
