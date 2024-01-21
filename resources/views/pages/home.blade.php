@@ -202,6 +202,9 @@
                 </div>
                 <div class="about__preview">
                     <div class="about__index">
+                        <a class="about__index-link" href="/storage/list_of_publications.pdf" target="_blank">
+                            <img class="about__index-img" src="{{asset('img/vak.jpg')}}" alt="ВАК">
+                        </a>
                         <a class="about__index-link" href="https://elibrary.ru/title_about.asp?id=74698" target="_blank">
                             <img class="about__index-img" src="{{asset('img/rinc.jpg')}}" alt="index">
                         </a>
