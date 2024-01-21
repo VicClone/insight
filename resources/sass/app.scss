@@ -428,6 +428,14 @@ main {
                 border-radius: 20px;
                 background: $primary;
             }
+
+            &.no-dots {
+                padding-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
         }
     }
 }
