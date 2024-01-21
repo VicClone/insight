@@ -466,8 +466,7 @@
                         <ul>
                             <li>
                                 <p class="base-list__text">
-                                    <a class="base-link" href="/storage/application_for_publication.docx" download>заявление о публикации</a>
-                                    произведения и передаче прав на него, включающее также согласие на обработку персональных данных и использование изображения;
+                                    <a class="base-link" href="/storage/application_for_publication.docx" download>Согласие</a> на обработку персональных данных и публикацию материалов в информационных ресурсах и сервисах
                                 </p>
                             </li>
                             <li>
