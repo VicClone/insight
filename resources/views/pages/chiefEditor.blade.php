@@ -4,6 +4,7 @@
     <section class="container page">
         <h2 class="base-title-2">Коновалов Антон Андреевич</h2>
         <p><strong>Ученая степень:</strong> кандидат педагогических наук</p>
+        <p><strong>Ученое звание:</strong> доцент</p>
         <p><strong>Должность: </strong>директор
             научно-образовательного центра исследования перспектив кадрового обеспечения
             системы профессионального образования.</p>
@@ -11,7 +12,7 @@
         <p>Главный редактор журнала «Инновационная научная современная академическая исследовательская
             траектория (ИНСАЙТ)».</p>
         <p>ORCID ID: https://orcid.org/0000-0003-4134-665X<br><span style="fant-size: 11pt;">Researher ID:
-                ABD-2865-2021<br></span><span style="font-size: 11pt;">Scopus ID: 57325487000?<br></span><span
+                ABD-2865-2021<br></span><span style="font-size: 11pt;">Scopus ID: 57325487000<br></span><span
                 style="font-size: 11pt;">eLibrary AuthorID: 817621</span></p>
 
         <p> </p>

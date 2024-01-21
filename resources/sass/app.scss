@@ -337,9 +337,14 @@ main {
         max-width: 250px;
         margin-right: 20px;
 
+        &-ava {
+            display: block;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
         &-avatar {
             width: 100%;
-            margin-bottom: 10px;
         }
 
         &-position,

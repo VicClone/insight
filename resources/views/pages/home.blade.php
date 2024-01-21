@@ -109,11 +109,16 @@
                 <div class="about__info">
                     <div class="clearfix">
                         <div class="about__сhief-editor">
-                            <img
-                                class="about__сhief-editor-avatar"
-                                src="{{asset('img/сhiefEditor.jpg')}}"
-                                alt="Главный редактор"
-                            >
+                            <div class="about__сhief-editor-ava">
+                                <img
+                                    class="about__сhief-editor-avatar"
+                                    src="{{asset('img/сhiefEditor.jpg')}}"
+                                    alt="Главный редактор"
+                                >
+                                <a class="staff__interview btn btn-primary" href="{{ route('chiefEditor') }}">
+                                    Читать сведения
+                                </a>
+                            </div>
                             <p class="about__сhief-editor-position">Главный редактор</p>
                             <p class="about__сhief-editor-name">
                                 <a
